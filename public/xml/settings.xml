@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<settings>
+  <!-- Ip and port of the app.js server -->
+  <socket>http://127.0.0.1:8000</socket> 
+
+  <!-- Berlin Map -->
+  <!--
+  <lonMapPos>13.38333</lonMapPos> 
+  <latMapPos>52.51666</latMapPos>
+  -->
+
+  <!-- Fribourg Map 46.80, 7.15000-->
+  <lonMapPos>7.15000</lonMapPos> 
+  <latMapPos>46.82</latMapPos>
+
+  <!-- Zoom Level Berlin Map -->
+  <!-- <zoomLevel>11</zoomLevel> -->
+  <!--Zoom Level Fribourg Map -->
+  <zoomLevel>13</zoomLevel>   
+
+  <!-- Center of the Screen -->
+  <centerLonScr>7.15000</centerLonScr>
+  <centerLatScr>46.82</centerLatScr>
+
+  <!-- Lat to show Long to Show (Unused) -->
+  <latToShow>0.017565298825</latToShow>
+  <lonToShow>0.016321539878</lonToShow>
+  
+  <!-- Size in pixels of the bounding box selection -->
+  <selBoxSize>400</selBoxSize>		
+
+  <!-- Theme color -->
+  <colorTheme>#7BF</colorTheme>
+
+  <!-- List of Languages  -->
+  <LanguageList>
+    <lan id="DE">Deutsch</lan>
+    <lan id="FR">Français</lan>  
+    <lan id="EN">English</lan>  
+  </LanguageList>
+        
+  <!-- List of Main Nodes with parent id 0 that we want to display  -->
+
+  <!-- List of Main Topics  -->
+  <MainTopicsList>
+    <MainTopic>
+      <idTop>201</idTop> 
+    </MainTopic>
+    <MainTopic>
+      <idTop>202</idTop>
+    </MainTopic>
+    <MainTopic>
+      <idTop>203</idTop>
+    </MainTopic>
+  </MainTopicsList>
+  
+  <!-- List of Sub Topic controllers  -->
+  <ObjectGroup Topic="204" >
+    <GUIObject ObjectType="SpecialTopic" Command="Reset" name="Reset"/>						<!-- Info Button -->
+    <GUIObject ObjectType="ExternalApp" AppId="204" ButtonId="0" name="Visible/Invisible"/> 			<!-- Visible/Invisible Button -->
+    <GUIObject ObjectType="POISelect" Select="previous"/>
+    <GUIObject ObjectType="POISelect" Select="next"/>
+    <GUIObject ObjectType="TimeSet" Year="1850" />
+    <GUIObject ObjectType="TimeSet" Year="1900" />
+    <GUIObject ObjectType="TimeSet" Year="1945" />
+    <GUIObject ObjectType="TimeSet" Year="1975" />
+    <GUIObject ObjectType="TimeSet" Year="1993" />
+    <GUIObject ObjectType="TimeSet" Year="1998" />
+    <GUIObject ObjectType="TimeSet" Year="2004" />
+    <GUIObject ObjectType="TimeSet" Year="2012" />  
+    <GUIObject ObjectType="MapController"/>
+  </ObjectGroup>
+
+  <ObjectGroup Topic="205" >
+    <GUIObject ObjectType="SpecialTopic" Command="Reset" name="Reset"/>						<!-- Info Button -->
+    <GUIObject ObjectType="ExternalApp" btnType="Exclusive" AppId="1" ButtonId="1" name="Male"/>		<!-- male -->
+    <GUIObject ObjectType="ExternalApp" btnType="Exclusive" AppId="1" ButtonId="2" name="Female"/> 		<!-- female -->
+    <GUIObject ObjectType="TimeSet" Year="1970" />
+    <GUIObject ObjectType="TimeSet" Year="1980" />
+    <GUIObject ObjectType="TimeSet" Year="1990" />
+    <GUIObject ObjectType="TimeSet" Year="2000" />
+    <GUIObject ObjectType="ObjectSet" Type="6">
+      <Element Id = "20" name="0-4"/> 										<!-- AGE  0-4 -->
+      <Element Id = "21" name="5-9"/> 										<!-- AGE  5-9 -->
+      <Element Id = "22" name="10-14"/> 									<!-- AGE 10-14 -->
+      <Element Id = "23" name="15-19"/> 									<!-- AGE 15-29 -->
+      <Element Id = "24" name="20-24"/>										<!-- AGE 20-24 -->
+      <Element Id = "25" name="25-29"/> 									<!-- AGE 25-29 -->
+      <Element Id = "26" name="30-34"/> 									<!-- AGE 30-34 -->
+      <Element Id = "27" name="35-39"/> 									<!-- AGE 35-39 -->
+      <Element Id = "28" name="40-44"/> 									<!-- AGE 40-44 -->
+      <Element Id = "29" name="45-49"/> 									<!-- AGE 45-49 -->
+      <Element Id = "30" name="50-54"/> 									<!-- AGE 50-54 -->
+      <Element Id = "31" name="55-59"/> 									<!-- AGE 55-59 -->
+      <Element Id = "32" name="60-64"/> 									<!-- AGE 60-64 -->
+      <Element Id = "33" name="75-69"/> 									<!-- AGE 65-69 -->
+      <Element Id = "34" name="70-74"/> 									<!-- AGE 70-74 -->
+      <Element Id = "35" name="75-79"/> 									<!-- AGE 75-79 -->
+      <Element Id = "36" name="80-84"/>										<!-- AGE 80-84 -->
+      <Element Id = "37" name="85-89"/> 									<!-- AGE 85-89 -->
+      <Element Id = "38" name="90+"/> 										<!-- AGE 90+ -->
+    </GUIObject>   
+  </ObjectGroup>
+
+  <ObjectGroup Topic="206" districts="true">
+    <GUIObject ObjectType="ExternalApp" btnType="Exclusive" AppId="1" ButtonId="1" name="Male"/>	        <!-- male -->
+    <GUIObject ObjectType="ExternalApp" btnType="Exclusive" AppId="1" ButtonId="2" name="Female"/>	        <!-- female -->
+    <GUIObject ObjectType="ExternalApp" btnType="Exclusive" AppId="7" ButtonId="40" name="Swiss"  />		<!-- swiss -->
+    <GUIObject ObjectType="ExternalApp" btnType="Exclusive" AppId="7" ButtonId="41" name="Foreigners"/>		<!-- foreigners -->
+    <GUIObject ObjectType="SpecialTopic" Command="GoToPast" name="Prev Year"/>					<!-- prev year -->
+    <GUIObject ObjectType="SpecialTopic" Command="GoToFuture" name="Next Year"/>				<!-- next year -->
+  </ObjectGroup>
+
+  <ObjectGroup Topic="208" >
+    <GUIObject ObjectType="SpecialTopic" Command="Reset" name="Reset"/> 					<!-- Info Button -->
+    <GUIObject ObjectType="POISelect" Select="previous"/>
+    <GUIObject ObjectType="POISelect" Select="next"/>
+    <GUIObject ObjectType="ExternalApp" btnType="Trigger" AppId="0" ButtonId="0" name="Prev POI"/>
+    <GUIObject ObjectType="ExternalApp" btnType="Trigger" AppId="0" ButtonId="1" name="Next POI"/>
+    <GUIObject ObjectType="ExternalApp" btnType="Trigger" AppId="0" ButtonId="2" name="Show POI Images"/>
+    <GUIObject ObjectType="MapController"/>
+  </ObjectGroup>
+
+  <ObjectGroup Topic="209" >
+    <GUIObject ObjectType="SpecialTopic" Command="Reset" name="Reset" />         				<!-- Info Button -->
+    <GUIObject ObjectType="ExternalApp" AppId="0" ButtonId="4" name="Show POI Charts"/>				<!-- show POI charts -->
+    <GUIObject ObjectType="TimeSet" Year="1980" />
+    <GUIObject ObjectType="TimeSet" Year="1995" />
+    <GUIObject ObjectType="TimeSet" Year="2005" />        
+  </ObjectGroup>
+
+  <ObjectGroup Topic="210" >
+    <GUIObject ObjectType="SpecialTopic" Command="Reset" name="Reset"/>             				<!-- Info Button -->
+    <GUIObject ObjectType="ExternalApp"  AppId="210" ButtonId="3050" name="1900"/>  				<!-- 1900 -->
+    <GUIObject ObjectType="ExternalApp"  AppId="210" ButtonId="3051" name="1945"/>  				<!-- 1945 -->
+    <GUIObject ObjectType="ExternalApp"  AppId="210" ButtonId="3052" name="1975"/>  				<!-- 1975 -->
+    <GUIObject ObjectType="ExternalApp"  AppId="210" ButtonId="3053" name="1993"/>  				<!-- 1993-->
+    <GUIObject ObjectType="ExternalApp"  AppId="210" ButtonId="3054" name="1998"/>  				<!-- 1998-->
+    <GUIObject ObjectType="ExternalApp"  AppId="210" ButtonId="3055" name="2004"/>  				<!-- 2004-->
+    <GUIObject ObjectType="ExternalApp"  AppId="210" ButtonId="3056" name="2012"/>  				<!-- 2012-->
+  </ObjectGroup>
+
+  <ObjectGroup Topic="211" >
+    <GUIObject ObjectType="SpecialTopic" Command="Reset" name="Reset"/> 					 <!-- Info Button -->
+    <GUIObject ObjectType="TimeSet"      Year="1880" />
+    <GUIObject ObjectType="TimeSet"      Year="2000" />
+  </ObjectGroup>
+  
+  <ObjectGroup Topic="212" >
+    <GUIObject ObjectType="SpecialTopic" Command="Reset" name="Reset"/>       					<!-- Info Button -->
+    <GUIObject ObjectType="ExternalApp" AppId="0" ButtonId="4" name="show POI charts"/> 			<!-- show POI charts -->
+    <GUIObject ObjectType="TimeSet" Year="1970" />
+    <GUIObject ObjectType="TimeSet" Year="1980" />
+    <GUIObject ObjectType="TimeSet" Year="1990" />
+    <GUIObject ObjectType="TimeSet" Year="2000" />   
+  </ObjectGroup>  
+
+  <ObjectGroup Topic="230" >
+    <GUIObject ObjectType="ExternalApp" AppId="230" ButtonId="3201" name="Spitäler"/>  				<!-- Spitäler -->
+    <GUIObject ObjectType="ExternalApp" AppId="230" ButtonId="3202" name="Kinderbetreung"/>  			<!-- Kinderbetreung -->
+    <GUIObject ObjectType="ExternalApp" AppId="230" ButtonId="3203" name="Pflegeeinrichtungen"/> 		<!-- Pflegeeinrichtungen  -->
+    <GUIObject ObjectType="ExternalApp" AppId="230" ButtonId="3204" name="Beratung und Betreuung"/>  		<!-- Beratung und Betreuung  -->
+  </ObjectGroup>
+  
+</settings>

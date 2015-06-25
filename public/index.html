@@ -1,0 +1,446 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="loading">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="Jorge Galvez Gabarda" name="author" />
+<meta content="Multitouch web interface for controlling the Geographic data-visualization installation called Geopulse" name="description" />
+<title>GeoPulse Controller v.1.0</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" media="screen"/>
+<link rel="stylesheet" type="text/css" href="css/style2.css" media="screen"/>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+<script type="text/javascript" src="js/GmapsMask.js"></script>
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/loading.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+
+
+<script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="js/timeout.js"></script>
+<script type="text/javascript" src="js/xmlSettings.js"></script>
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="js/socketManager.js"></script>
+<script type="text/javascript" src="js/pageBuilder.js"></script>
+<script type="text/javascript" src="js/GmapsAPI.js"></script>
+<script type="text/javascript" src="js/menuInteraction.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+  var nice;
+  setTimeout(setBoxScroll,1000);
+ 
+    
+});
+</script>
+
+<script type="text/javascript">
+  window.onload = function(){
+    draggable();
+  };
+
+  var dragObj = null;
+  function draggable(){
+    var obj = document.getElementById('zero');
+    obj.style.position = "absolute";
+      obj.style.left = 0 +"%";
+      obj.style.top= 10 +"%";
+    
+   obj = document.getElementById('one');
+        obj.style.position = "absolute";
+	obj.style.left = 100 +"%";
+        obj.style.top= 0 +"%";
+
+   obj = document.getElementById('center');
+        obj.style.position = "absolute";
+	obj.style.left = 0 +"%";
+        obj.style.top= 0 +"%";
+
+    /*obj.onmousedown = function(){
+            dragObj = obj;
+    }*/
+  }
+
+  document.onmouseup = function(e){
+    dragObj = null;
+  };
+
+  document.onmousemove = function(e){
+    var x = e.pageX-150;
+    var y = e.pageY-150;
+
+    if(dragObj == null)
+        return;
+
+    dragObj.style.left = x +"px";
+    dragObj.style.top= y +"px";
+  };
+</script>
+
+
+<script type="text/javascript">
+var menuSlided = false;
+var menuSlidedComplete = false;
+
+var currentMTopic = -1;
+var currentController = -1; 
+
+//Specifical interface selector on the left side panel.
+function rScrollMenu(index){   
+  var menu = "#lipsum" + String(index);          
+  $('#scrollable').animate({scrollTop: $(menu).offset().top}, 1000);	  
+}
+
+function mapMode(type){
+  switch(type){
+    case 0:{return false;}break; // STANDARD_TOPIC
+    case 1:{console.log("POI TOPIC");return true;}break; // POI_TOPIC (single pois and shapefile pois)
+    case 2:{return false; }break; // MEDIA_CONTENT
+    case 3:{console.log("SHAPE FILE");return true;}break; // SHAPE FILE - child of Poitopic(non interactive fixed shape file)
+    case 4:{console.log("SPECIAL TOPIC");return true;}break; // SPECIAL TOPIC - child of Poitopic
+    case 5:{return false; }break; // FLASH_TOPIC
+    case 6:{return false; }break; // WIDGET TOPIC
+    case 7:{console.log("CATEGORY TOPIC");return true;}break; // CATEGORY TOPIC - child of Poitopic
+    case 8:{console.log("LAYER TOPIC");return true;}break; // LAYER_TOPIC - child of Poitopic
+
+  }
+}
+
+/** slideMenu(index,type) slides the controller layers assigned to an specifical topip (index) The size of the depends on the type of the topic */
+function slideMenu(index, type, id){
+  deleteM();
+  deleteS();
+
+  if(mapMode(type) == true ) {
+    //Sending request of the Pois
+    if(menuSlided == false){
+      sendMessageData("POI_TOPIC_DEPLOYMENT", id);
+    }
+    else if(index != currentController){
+      sendMessageData("POI_TOPIC_DEPLOYMENT", id);
+    }
+  }
+  //Sending Event for generating a LINZTOPIC_MESSAGE
+  sendMessageData("SEND_LINZTOPIC_MESSAGE",id);
+
+  //If the id is in the list of the districts
+  for(i=0 ; i<districts.length ; i++){
+     if(id == districts[i]){sendMessageData("SEND_DISTRICTS_DEPLOYMENT",id);}
+  }
+  //Unmark All the active buttons with te same id which are active
+  for(i=0 ;i<controllers.length; i++ ){
+    if(controllers[i][0] == id && controllers[i][1] == "ExternalApp") {
+      controllers[i][controllers[i].length-1] = false;
+      $("#btn"+i).animate({backgroundColor:"#ffffff",}, {duration:150, queue:false});
+      $("#tsp"+i).animate({color:colorTheme,}, 150);
+    }
+  }
+  var complete = false;
+  if(menuSlided == false) {
+    document.getElementById("stc"+index).style.fontWeight = 800;
+    $('#stc'+index).animate({marginLeft: '10px'},{duration:300, queue:false});
+    $('#stc'+index).animate({fontSize: '16px'},{duration:300, queue:false});
+
+    currentController = index;
+    menuSlided = true;
+    if(complete == false) {
+      $('#one').animate({left: '80%'},{duration:600, queue:false});
+      $('#one').animate({width: '20%'},{duration:600, queue:false});
+    }
+    else {
+      $('#one').animate({left: '20%'},{duration:600, queue:false});
+      $('#one').animate({width: '80%'},{duration:600, queue:false});
+      //menuSlidedComplete = true;
+    }
+    dragCMenu(index);
+  }
+  else{
+    
+    if( currentController == index)
+    {
+      $('#stc'+index).animate({marginLeft: '30px'},{duration:400, queue:false});
+      $('#stc'+index).animate({fontSize: '14px'},{duration:300, queue:false});
+      document.getElementById("stc"+index).style.fontWeight = 300;
+     
+
+      currentController = -1;
+      menuSlided = false;
+      $('#one').animate({left: '100%'},{duration:600, queue:false});
+      $('#one').animate({width: '0%'},{duration:600, queue:false});
+      undragCMenu(index);
+    }
+    else{
+      $('#stc'+currentController).animate({marginLeft: '30px'},{duration:400, queue:false});
+      $('#stc'+currentController).animate({fontSize: '14px'},{duration:300, queue:false});
+      document.getElementById("stc"+currentController).style.fontWeight = 300;
+      
+      $('#stc'+index).animate({marginLeft: '10px'},{duration:400, queue:false});
+      $('#stc'+index).animate({fontSize: '16px'},{duration:300, queue:false});
+      document.getElementById("stc"+index).style.fontWeight = 800;
+
+      undragCMenu(currentController);
+      currentController = index;
+      
+      if(complete == false) {
+        $('#one').animate({left: '80%'},{duration:600, queue:true});
+        $('#one').animate({width: '20%'},{duration:600, queue:false});
+      }
+      else {
+        $('#one').animate({left: '20%'},{duration:600, queue:true});
+        $('#one').animate({width: '80%'},{duration:600, queue:false});
+      }
+      dragCMenu(currentController);
+    }
+  }
+}
+
+function dragCMenu(index){
+  var cDiv = "#controllerDiv" + String(index);
+  $(cDiv).slideToggle("slow");	
+}
+function dragCMenuV2(index){
+  var cDiv = "#controllerDivTopic" + String(index);
+  $(cDiv).slideToggle("slow");	
+}
+
+function undragCMenu(index){
+  var cDiv = "#controllerDiv" + String(index);
+  $(cDiv).slideUp("slow");
+}
+function undragCMenuV2(index){
+  var cDiv = "#controllerDivTopic" + String(index);
+  $(cDiv).slideUp("slow");
+}
+
+function dragSMenu(index){
+  var menu = "#smbutton" + String(index);
+  var roll = "#roll" + String(index);
+  var tag  = "#mtopic" + String(index);
+
+  if(currentMTopic == -1 ){
+    $(tag).animate({backgroundColor:colorTheme,}, 750);
+    $(menu).animate({color:"#fff",}, 250);
+    currentMTopic = index;
+  }
+  else{
+    $("#mtopic" + String(currentMTopic)).animate({backgroundColor:"#fff",}, 250);
+    $("#smbutton" + String(currentMTopic)).animate({ color:"#000",}, 250);
+
+    if(index != currentMTopic){	
+      $(tag).animate({backgroundColor:colorTheme,}, 750);
+      $(menu).animate({color:"#fff",}, 250);
+      currentMTopic = index;
+      
+      if(menuSlided == true){
+ 	menuSlided = false;
+	if(currentController != -1) {
+          undragCMenu(currentController);
+          $('#stc'+currentController).animate({marginLeft: '30px'},{duration:400, queue:false});
+          $('#stc'+currentController).animate({fontSize: '14px'},{duration:300, queue:false});
+          document.getElementById("stc"+currentController).style.fontWeight = 300;
+	  currentController = -1;
+        }
+        $('#one').animate({left: '100%'},{duration:600, queue:false});
+        $('#one').animate({width: '0%'},{duration:600, queue:false});
+      }
+    }
+    else{//Default State
+      currentMTopic = -1; 
+      if(menuSlided == true){
+ 	menuSlided = false;
+	if(currentController != -1) {
+          undragCMenu(currentController);
+          $('#stc'+currentController).animate({marginLeft: '30px'},{duration:400, queue:false});
+          $('#stc'+currentController).animate({fontSize: '14px'},{duration:300, queue:false});
+          document.getElementById("stc"+currentController).style.fontWeight = 300;
+	  currentController = -1;
+        }
+        $('#one').animate({left: '100%'},{duration:600, queue:false});
+        $('#one').animate({width: '0%'},{duration:600, queue:false});
+      }
+    }
+  }
+  $(roll).slideToggle("slow");
+
+  for(i=1; i <= maintopics.length; i++){ 
+    if(parseInt(index) != i){
+      roll = "#roll" + String(i); $(roll).slideUp("slow");
+    }
+  } 
+  setTimeout(setBoxScroll,1000);
+}
+function setBoxScroll(){
+  nice = $("html").niceScroll();
+  
+  $("#boxscroll").niceScroll({
+
+	touchbehavior:true,	 
+});
+  $("#boxscroll").getNiceScroll().resize();
+}
+
+function sendControllerMessage(data,stopic){
+  var vec = new Array();
+  if(controllers[data][1] == "ExternalApp"){
+    vec.push(controllers[data][2]);
+    vec.push(controllers[data][3]);
+
+    sendMessageData("SEND_EXTERNAL_APP_CMD_MESSAGE",vec);
+    //console.log("btn"+data);
+   
+    if(controllers[data][6] == false){
+      controllers[data][6] = true;
+     
+
+      if(controllers[data][5] == "Exclusive"){ // If the button type is Exclusive the rest of the buttons with the same AppId in the same id topic are unmarked
+        for(i=0 ;i<controllers.length; i++ ){
+           $("#btn"+data).animate({backgroundColor:colorTheme,}, {duration:150, queue:false});
+           $("#tsp"+data).animate({color:"#fff",}, {duration:150, queue:false});
+          if( i != parseInt(data) && controllers[data][0] == controllers[i][0] && controllers[data][2] == controllers[i][2] ) {
+            controllers[i][6] = false;
+            $("#btn"+i).animate({backgroundColor:"#ffffff",}, {duration:150, queue:false});
+            $("#tsp"+i).animate({color:colorTheme,}, 150);
+          }
+        }
+      }
+      else{
+        $("#btn"+data).animate({backgroundColor:colorTheme,}, {duration:10,});
+        $("#btn"+data).animate({backgroundColor:"#ffffff",}, {duration:250,});
+
+      } 
+    }
+    else {
+      controllers[data][6] = false;
+      $("#btn"+data).animate({backgroundColor:"#ffffff",}, {duration:150, queue:false});
+      $("#tsp"+data).animate({color:colorTheme,}, 150);
+    }
+
+  } else if(controllers[data][1] == "SpecialTopic") {
+    //console.log("clicked");
+    switch(parseInt(controllers[data][2])) {
+      case 44:{//reset 
+        //Unmark All the active buttons with te same id     
+        for(i=0 ; i<controllers.length; i++ ){
+          if(controllers[i][0] == controllers[data][0]) { 
+            
+            if(controllers[i][1] == "ExternalApp"){
+              controllers[i][controllers[i].length-1] = false;
+              $("#btn"+i).animate({backgroundColor:"#ffffff",}, {duration:150, queue:false});
+              $("#tsp"+i).animate({color:colorTheme,}, 150);
+            }
+          }
+        }  
+      }break;
+    }
+    $("#btn"+data).animate({backgroundColor:colorTheme,}, {duration:10,});
+    $("#tsp"+data).animate({color:"#000",}, {duration:10,queue:false});
+    $("#btn"+data).animate({backgroundColor:"#ffffff",}, {duration:250,});
+    $("#tsp"+data).animate({color:colorTheme,}, {duration:250,queue:false});
+    sendMessageData("SEND_TOPICSPECIAL_MESSAGE",controllers[data][2]);
+    
+  } else if(controllers[data][1] == "TimeSet") {
+    $("#btn"+data).animate({backgroundColor:colorTheme,}, {duration:10,});
+    $("#tsp"+data).animate({color:"#000",}, {duration:10,queue:false});
+    $("#btn"+data).animate({backgroundColor:"#ffffff",}, {duration:250,});
+    $("#tsp"+data).animate({color:colorTheme,}, {duration:250,queue:false});
+    sendMessageData("SEND_TIMESET_MESSAGE", controllers[data][2]);
+
+  } else if(controllers[data][1] == "POISelect") {
+
+    $("#btn"+data).animate({backgroundColor:colorTheme,}, {duration:10,});
+    $("#btn"+data).animate({backgroundColor:"#ffffff",}, {duration:250,});
+    sendMessageData("SEND_POISELECT_MESSAGE",controllers[data][2]);
+  }
+}
+function geoMapController(direction){
+  switch(direction){
+    case 1:{$(".buttonUP").animate({backgroundColor:colorTheme,}, {duration:10,});$(".buttonUP").animate({backgroundColor:"#ffffff",}, {duration:250,});}break;
+    case 2:{$(".buttonRIGHT").animate({backgroundColor:colorTheme,}, {duration:10,});$(".buttonRIGHT").animate({backgroundColor:"#ffffff",}, {duration:250,});}break;
+    case 3:{$(".buttonDOWN").animate({backgroundColor:colorTheme,}, {duration:10,});$(".buttonDOWN").animate({backgroundColor:"#ffffff",}, {duration:250,});}break;
+    case 4:{$(".buttonLEFT").animate({backgroundColor:colorTheme,}, {duration:10,});$(".buttonLEFT").animate({backgroundColor:"#ffffff",}, {duration:250,});}break;
+    case 5:{$(".buttonPLUS").animate({backgroundColor:colorTheme,}, {duration:10,});$(".buttonPLUS").animate({backgroundColor:"#ffffff",}, {duration:250,});}break;
+    case 6:{$(".buttonMINUS").animate({backgroundColor:colorTheme,}, {duration:10,});$(".buttonMINUS").animate({backgroundColor:"#ffffff",}, {duration:250,});}break;
+  }
+
+  sendMessageData("SEND_GEOMOVE_MESSAGE",direction);
+}
+
+
+function changeLan(ilan){
+
+  if(languages.length > 1){
+    for(i = 0; i < languages.length; i++ ){
+      $("#lsel"+i).animate({backgroundColor:"#FFF",}, {duration:500, queue:false});
+      $("#lsel"+i).animate({color:colorTheme,}, {duration:200, queue:false});
+    }
+  }
+  $("#lsel"+ilan).animate({backgroundColor:colorTheme,}, {duration:500, queue:false});
+  $("#lsel"+ilan).animate({borderColor:colorTheme,}, {duration:500, queue:false});
+  $("#lsel"+ilan).animate({color:"#FFF",}, {duration:200, queue:false});
+ 
+  for(i=0; i < MtopicLan.length ; i++ ){
+    document.getElementById("smbutton"+(i+1)).innerHTML = MtopicLan[i][ilan];
+  }
+
+  for(i=0; i < StopicLan.length; i++){
+    document.getElementById("stc"+(i+1)).innerHTML = StopicLan[i][ilan];
+    document.getElementById("pcon"+(i+1)).innerHTML = StopicLan[i][ilan];
+  }
+  //Sending the language Message event
+  sendMessageData("SEND_LANGUAGE_MESSAGE",ilan);
+
+}
+function polygonRedraw(){
+  multipler = multipler ;
+  ilat = (screenmap.getPath().getAt(0).lng()+screenmap.getPath().getAt(1).lng())/2;
+  ilon = (screenmap.getPath().getAt(1).lat()+screenmap.getPath().getAt(2).lat())/2;
+  scaledScreen(ilon,ilat,multipler);
+}
+</script>
+
+<script>
+var cactive = false;
+var selectorsActive = [];
+
+$(document).mousedown(function(){
+  cative = true;
+});
+$(document).mouseup(function(){
+  cative = false;
+  for(i = 0; i < selectorsActive.length; i++ ){
+     $("#os"+selectorsActive[i]).animate({backgroundColor:"#FFF",},{duration:500, queue:false});
+  }
+  //console.log(selectorsActive.length);
+  
+  if(selectorsActive.length > 0) {sendMessageData("SEND_OBJECT_SELECTION_MESSAGE",selectorsActive);  }
+
+  selectorsActive = [];
+});
+
+function markSelector(index,t){
+  if(cative){
+    $("#os"+index).animate({backgroundColor:colorTheme,},{duration:500, queue:false});
+    selectorsActive.push([index,t]);
+  }
+}
+</script>
+
+</head>
+<body >
+  <div id="lanSelector" style="height:8%; top:2%; left:1%; z-index:9000;overflow:hidden;"></div>
+  <div id="zero" style="height:80%; width:20%; z-index:9000;overflow:hidden;"> 
+    <div id="boxscroll">    
+      <ul id="thelist"></ ul>
+      <ul id="thelist2"></ ul>
+      <div style="height:300px;"></div>
+    </div>
+   
+  </div>
+  <div id="center" onclick='polygonRedraw()' style="height:100%; width:100%; "><div id="map-canvas"  style="width:100%; height:100%"></div></div>
+  <div id="one" style="height:100%;width:0%;z-index:9000;background-color:#fff;">
+    	<div id="scrollable" style='height:100%;overflow:hidden;'></div>
+  </div>
+</body>
+</html>

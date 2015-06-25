@@ -1,0 +1,1157 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- ATTENTION!! ExternalAppCommand with AppId = 0 is reserved for Pen and POI media selection -->
+ 
+<AnotoGUIDriver>
+
+  <General>
+  
+    <!--Default output (used if no other specified)-->
+    <Output Host="127.0.0.1" Port="9292"/>
+    		
+	<UserInterface ObjectSet="0" SceneNumber="1"> <!-- Fribourg Buch -->
+	  <!-- <Pen Id="56667"/> -->
+	  <!-- <Pen Id="30221"/> -->
+	  <!-- <Pen Id="24189"/> -->
+    </UserInterface>
+    
+    <UserInterface ObjectSet="1" SceneNumber="2"> <!-- WALL SOCIAL LIFE -->
+      <!-- <Pen Id="24189"/> -->
+	</UserInterface>
+    
+    <UserInterface ObjectSet="2" SceneNumber="2"> <!-- WALL ARCHIVE -->
+      <!-- <Pen Id="24189"/> -->
+	</UserInterface>
+	
+	<UserInterface ObjectSet="3" SceneNumber="1" OverlappingGroups="true"> <!-- TABLE -->
+
+	</UserInterface>
+	
+  </General>
+  
+  <ObjectSet Id="0">
+
+	<!-- 00 - Intro-Animation -->
+	<ObjectGroup Topic="99" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="117935" LeftX="14480" TopY="30" Width="1520" Height="1520"/>
+		<!-- <GUIObject ObjectType="ExternalApp" LeftX="14480" TopY="30" Width="1520" Height="1520" AppId="99" ButtonId="0"/> -->
+		<!-- <GUIObject AnotoPattern="117935" ObjectType="ExternalApp" LeftX="14480" TopY="30" Width="1520" Height="1520" AppId="99" ButtonId="0"/>--> <!-- Intro Video -->
+	</ObjectGroup>
+
+    
+    <!-- ================================================================================================================================================== -->
+    <!-- ======================================================= MOBILITY ================================================================================= -->
+    <!-- ================================================================================================================================================== -->
+  	
+    <ObjectGroup IsGlobal="true" FirstEventInitOnly="false">
+      <AnotoPattern Id="117935" LeftX="495" TopY="10700" Width="650" Height="300"/>
+	  <GUIObject ObjectType="SetLanguage"  LeftX="815" TopY="10700" Width="300" Height="300" LanguageId="0"/>  <!-- German -->
+	  <GUIObject ObjectType="SetLanguage"  LeftX="495" TopY="10700" Width="300" Height="300" LanguageId="1"/>  <!-- French -->
+    </ObjectGroup>
+	
+    <!-- Credits -->
+    <ObjectGroup Topic="300" FirstEventInitOnly="false" RelativeObjects="false">
+      <AnotoPattern Id="117935" LeftX="1320" TopY="10685" Width="300" Height="300"/>
+	  <GUIObject ObjectType="ExternalApp" LeftX="1320" TopY="10685" Width="300" Height="300" AppId="301" ButtonId="101"/> <!-- Media Content Element Credit Habitat -->
+    </ObjectGroup> 	
+    
+    
+	<!-- ============================================ EVOLUTION =========================================================================================== -->
+  
+	<!-- E1 - Entwicklung des Personenverkehrs -->
+	<ObjectGroup Topic="104" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="117935" LeftX="800" TopY="2870" Width="1750" Height="1370"/>
+		<GUIObject ObjectType="TimeSet" LeftX= "870" TopY="3870" Width="230" Height="200" Year="1950" />
+		<GUIObject ObjectType="TimeSet" LeftX="1100" TopY="3870" Width="230" Height="200" Year="1960" />
+		<GUIObject ObjectType="TimeSet" LeftX="1330" TopY="3870" Width="230" Height="200" Year="1970" />
+		<GUIObject ObjectType="TimeSet" LeftX="1560" TopY="3870" Width="230" Height="200" Year="1980" />
+		<GUIObject ObjectType="TimeSet" LeftX="1790" TopY="3870" Width="230" Height="200" Year="1990" />
+		<GUIObject ObjectType="TimeSet" LeftX="2020" TopY="3870" Width="230" Height="200" Year="2000" />
+		<GUIObject ObjectType="TimeSet" LeftX="2250" TopY="3870" Width="230" Height="200" Year="2010" />
+	</ObjectGroup>
+
+    
+	<!-- E2 - Ausgaben für Mobilität -->
+	<ObjectGroup Topic="105" FirstEventInitOnly="false" RelativeObjects="false">
+    <AnotoPattern Id="117935" LeftX="1965" TopY="7910" Width="1270" Height="590"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="1965" TopY="7960" Width="550" Height="550" AppId="105" ButtonId="1"/> <!-- Ausgaben ÖV (Content Element 1) -->
+		<GUIObject ObjectType="ExternalApp" LeftX="2730" TopY="7960" Width="550" Height="550" AppId="105" ButtonId="2"/> <!-- Ausgaben IV (Content Element 2) -->
+	</ObjectGroup>
+
+	
+	<!-- E3 - Verkehrslast seit 1990 -->
+	<ObjectGroup Topic="106" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="117935" LeftX="770" TopY="5765" Width="1610" Height="1035"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="1230" TopY="5790" Width="300" Height="300" AppId="106" ButtonId="1"/> <!-- traffic load category 1 -->
+		<GUIObject ObjectType="ExternalApp" LeftX="1660" TopY="5790" Width="300" Height="300" AppId="106" ButtonId="2"/> <!-- traffic load category 2 -->
+		<GUIObject ObjectType="ExternalApp" LeftX="2070" TopY="5790" Width="300" Height="300" AppId="106" ButtonId="3"/> <!-- traffic load category 3 -->
+		<GUIObject ObjectType="ExternalApp" LeftX="1230" TopY="6180" Width="300" Height="300" AppId="106" ButtonId="4"/> <!-- traffic load category 4 -->
+		<GUIObject ObjectType="ExternalApp" LeftX="1660" TopY="6180" Width="300" Height="300" AppId="106" ButtonId="5"/> <!-- traffic load category 5 -->
+		<GUIObject ObjectType="ExternalApp" LeftX="2070" TopY="6180" Width="300" Height="300" AppId="106" ButtonId="6"/> <!-- traffic load category 6 -->
+		<GUIObject ObjectType="TimeSet"     LeftX="850" TopY="6625" Width="225" Height="175" Year="1990" />
+		<GUIObject ObjectType="TimeSet"     LeftX="1100" TopY="6625" Width="225" Height="175" Year="1995" />
+		<GUIObject ObjectType="TimeSet"     LeftX="1325" TopY="6625" Width="225" Height="175" Year="2000" />
+		<GUIObject ObjectType="TimeSet"     LeftX="1550" TopY="6625" Width="225" Height="175" Year="2005" />
+		<GUIObject ObjectType="TimeSet"     LeftX="1775" TopY="6625" Width="225" Height="175" Year="2010" />
+    </ObjectGroup>
+
+    
+	<!-- Luftverschmutzung Feinstaub -->
+	<ObjectGroup Topic="135" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="117935" LeftX="3200" TopY="4000" Width="700" Height="600"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="3230" TopY="4020" Width="300" Height="300" AppId="135" ButtonId="1351"/> <!-- 18µg -->
+		<GUIObject ObjectType="ExternalApp" LeftX="3600" TopY="4020" Width="300" Height="300" AppId="135" ButtonId="1352"/> <!-- 20µg -->
+		<GUIObject ObjectType="ExternalApp" LeftX="3385" TopY="4315" Width="300" Height="300" AppId="135" ButtonId="1353"/> <!-- 22µh -->
+    </ObjectGroup>
+
+ 
+	<!-- Luftverschmutzung NO2 -->
+	<ObjectGroup Topic="136" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="117935" LeftX="4150" TopY="3660" Width="1030" Height="1000"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="4540" TopY="3670" Width="270" Height="270" AppId="136" ButtonId="1361"/> <!-- 15µg -->
+		<GUIObject ObjectType="ExternalApp" LeftX="4910" TopY="3670" Width="270" Height="270" AppId="136" ButtonId="1362"/> <!-- 20µg -->
+		<GUIObject ObjectType="ExternalApp" LeftX="4160" TopY="4030" Width="270" Height="270" AppId="136" ButtonId="1363"/> <!-- 25µh -->
+        <GUIObject ObjectType="ExternalApp" LeftX="4540" TopY="4030" Width="270" Height="270" AppId="136" ButtonId="1364"/> <!-- 30µh -->
+        <GUIObject ObjectType="ExternalApp" LeftX="4910" TopY="4030" Width="270" Height="270" AppId="136" ButtonId="1365"/> <!-- 33µh -->
+        <GUIObject ObjectType="ExternalApp" LeftX="4160" TopY="4400" Width="270" Height="270" AppId="136" ButtonId="1366"/> <!-- 36µh -->
+        <GUIObject ObjectType="ExternalApp" LeftX="4540" TopY="4400" Width="270" Height="270" AppId="136" ButtonId="1367"/> <!-- >36µh -->
+    </ObjectGroup>
+    
+	
+	<!-- E4 - Lärmverschmutzung -->
+	<ObjectGroup Topic="107" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="117935" LeftX="3605" TopY="5540" Width="1620" Height="1025"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="3605" TopY="6110" Width="290" Height="290" AppId="107" ButtonId="1071"/> <!-- POI 1071 Straßenlärm bei Tag -->
+		<GUIObject ObjectType="ExternalApp" LeftX="4980" TopY="5550" Width="290" Height="290" AppId="107" ButtonId="1072"/> <!-- POI 1072 Straßenlärm bei Nacht -->
+		<GUIObject ObjectType="ExternalApp" LeftX="4190" TopY="6285" Width="290" Height="290" AppId="107" ButtonId="1073"/> <!-- POI 1073 Eisenbahnlärm bei Tag -->
+		<GUIObject ObjectType="ExternalApp" LeftX="4345" TopY="5660" Width="290" Height="290" AppId="107" ButtonId="1074"/> <!-- POI 1074 Eisenbahnlärm bei Nacht -->
+    </ObjectGroup>
+
+  
+	<!-- ============================================ CHALLENGES ========================================================================================== -->
+	
+	<!-- C1 - Mobilitätsentwicklung -->
+	<ObjectGroup Topic="110" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="117935" LeftX="8830" TopY="2355" Width="1375" Height="600"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="8830" TopY="2355" Width="600" Height="600" AppId="110" ButtonId="3"/> <!-- Personenkilometer (CE 3) -->
+		<GUIObject ObjectType="ExternalApp" LeftX="9580" TopY="2355" Width="600" Height="600" AppId="110" ButtonId="4"/> <!-- Wachstum (CE 4) -->
+	</ObjectGroup>
+
+	
+	<!-- C2 - Ökologie  -->
+	<ObjectGroup Topic="1111" FirstEventInitOnly="false" RelativeObjects="false"> <!-- SubTopic 1111: Ökologie  -->
+		<AnotoPattern Id="117935" LeftX="5765" TopY="3975" Width="290" Height="290"/>
+	</ObjectGroup>
+	<ObjectGroup Topic="1112" FirstEventInitOnly="false" RelativeObjects="false"> <!-- SubTopic 1112: Energieverbrauch -->
+		<AnotoPattern Id="117935" LeftX="6275" TopY="3975" Width="290" Height="290"/>
+	</ObjectGroup>
+
+	
+	<!-- C3 - Parkplatzangebot -->
+	<ObjectGroup Topic="112" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="117935" LeftX="7275" TopY="4095" Width="290" Height="290"/>
+	</ObjectGroup>
+
+	
+	<!-- C4 - Fahrzeugbesitz & Saisonkarten  -->
+	<ObjectGroup Topic="113" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="117935" LeftX="7600" TopY="10145" Width="900" Height="250"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="7600" TopY="10145" Width="250" Height="250" AppId="113" ButtonId="7"/> <!-- Fahrzeugbesitz/ÖV Abos CH (CE 7) -->
+		<GUIObject ObjectType="ExternalApp" LeftX="7920" TopY="10145" Width="250" Height="250" AppId="113" ButtonId="5"/> <!-- Fahrzeugbesitz/ÖV Abos FR (CE 5) -->
+		<GUIObject ObjectType="ExternalApp" LeftX="8240" TopY="10145" Width="250" Height="250" AppId="113" ButtonId="6"/> <!-- Fahrzeugbesitz/ÖV Abos Bulle (CE 6) -->
+	</ObjectGroup>
+
+	
+	<!-- C7 - Infrastrukturelle Verteilung  -->
+	<ObjectGroup Topic="116" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="117935" LeftX="10290" TopY="2840" Width="1430" Height="1965"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="11400" TopY="3460" Width="300" Height="300" AppId="116" ButtonId="1161"/> <!-- Shops -->
+		<GUIObject ObjectType="ExternalApp" LeftX="10880" TopY="4465" Width="300" Height="300" AppId="116" ButtonId="1162"/> <!-- Social Services -->
+		<GUIObject ObjectType="ExternalApp" LeftX="11435" TopY="2840" Width="300" Height="300" AppId="116" ButtonId="1163"/> <!-- Educational Institutions -->
+		<GUIObject ObjectType="ExternalApp" LeftX="10290" TopY="4535" Width="300" Height="300" AppId="116" ButtonId="1164"/> <!-- Public Institutions -->
+		<GUIObject ObjectType="ExternalApp" LeftX="11230" TopY="4015" Width="300" Height="300" AppId="116" ButtonId="1165"/> <!-- Transport -->
+	</ObjectGroup>
+	
+	<!-- C8 - Wie nutzen wir den Individualverkehr -->
+	<ObjectGroup Topic="1173" FirstEventInitOnly="false" RelativeObjects="false"> <!-- SubTopic 1172: Wie nutzen wir den Individualverkehr CH -->
+		<AnotoPattern Id="117935" LeftX="6485" TopY="5815" Width="300" Height="300"/>
+	</ObjectGroup>
+	<ObjectGroup Topic="1171" FirstEventInitOnly="false" RelativeObjects="false"> <!-- SubTopic 1171: Wie nutzen wir den Individualverkehr FR -->
+		<AnotoPattern Id="117935" LeftX="6820" TopY="5815" Width="300" Height="300"/>
+	</ObjectGroup>	
+	<ObjectGroup Topic="1172" FirstEventInitOnly="false" RelativeObjects="false"> <!-- SubTopic 1173: Wie nutzen wir den Individualverkehr Bulle -->
+		<AnotoPattern Id="117935" LeftX="7200" TopY="5815" Width="300" Height="300"/>
+	</ObjectGroup>
+
+	
+	<!-- C10 - Mobilitätsverhalten -->
+	<ObjectGroup Topic="119" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="117935" LeftX="8335" TopY="7745" Width="1565" Height="1255"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="8335" TopY="7745" Width="1565" Height="1255" AppId="119" ButtonId="8"/> <!-- CE 8 -->
+	</ObjectGroup>
+
+	
+	<!-- C11 - Wer nutz IV / ÖV  -->
+	<ObjectGroup Topic="120" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="117935" LeftX="5585" TopY="9565" Width="1250" Height="300"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="5585" TopY="9565" Width="300" Height="300" AppId="120" ButtonId="9"/>  <!-- Öffentlicher Verkehr (CE 9) -->
+		<GUIObject ObjectType="ExternalApp" LeftX="6570" TopY="9565" Width="300" Height="300" AppId="120" ButtonId="10"/> <!-- Individualverkehr (CE 10) -->
+	</ObjectGroup>
+
+	
+	<!-- C12 - Erreichbarkeit & Nutzung ÖV  -->
+	<ObjectGroup Topic="121" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="117935" LeftX="9425" TopY="6260" Width="550" Height="550"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="9425" TopY="6260" Width="550" Height="550" AppId="121" ButtonId="17"/>  <!-- CE 17 -->
+		<!-- ToDo: weitere Buttons -->
+	</ObjectGroup>
+
+
+	<!-- C13 - Womit fahren wir ? -->
+	<ObjectGroup Topic="1221" FirstEventInitOnly="false" RelativeObjects="false"> <!-- SubTopic 1221: Womit fahren wir in die Arbeit -->
+		<AnotoPattern Id="117935" LeftX="4390" TopY="9955" Width="280" Height="280"/>
+	</ObjectGroup>
+	<ObjectGroup Topic="1222" FirstEventInitOnly="false" RelativeObjects="false"> <!-- SubTopic 1222: Womit fahren wir zur Ausbildung -->
+		<AnotoPattern Id="117935" LeftX="3715" TopY="9330" Width="280" Height="280"/>
+	</ObjectGroup>
+	<ObjectGroup Topic="1223" FirstEventInitOnly="false" RelativeObjects="false"> <!-- SubTopic 1223: Womit fahren wir in der Freizeit -->
+		<AnotoPattern Id="117935" LeftX="3515" TopY="9690" Width="280" Height="280"/>
+	</ObjectGroup>
+
+	
+	<!-- C16 - Agglo FR im Vergleich -->
+	<ObjectGroup Topic="1251" FirstEventInitOnly="false" RelativeObjects="false"> <!-- SubTopic 1251: Agglo Bulle -->
+		<AnotoPattern Id="117935" LeftX="5135" TopY="7725" Width="160" Height="160"/>
+	</ObjectGroup>
+	<ObjectGroup Topic="1252" FirstEventInitOnly="false" RelativeObjects="false"> <!-- SubTopic 1252: Agglo Biel -->
+		<AnotoPattern Id="117935" LeftX="5330" TopY="7165" Width="160" Height="160"/>
+	</ObjectGroup>
+	<ObjectGroup Topic="1253" FirstEventInitOnly="false" RelativeObjects="false"> <!-- SubTopic 1253: Agglo Lausanne -->
+		<AnotoPattern Id="117935" LeftX="4860" TopY="7765" Width="160" Height="160"/>
+	</ObjectGroup>
+	<ObjectGroup Topic="1254" FirstEventInitOnly="false" RelativeObjects="false"> <!-- SubTopic 1254: Agglo Bern -->
+		<AnotoPattern Id="117935" LeftX="5435" TopY="7350" Width="160" Height="160"/>
+	</ObjectGroup>
+	<ObjectGroup Topic="1255" FirstEventInitOnly="false" RelativeObjects="false"> <!-- SubTopic 1255: Agglo Neuchâtel -->
+		<AnotoPattern Id="117935" LeftX="5040" TopY="7375" Width="160" Height="160"/>
+	</ObjectGroup>
+	<ObjectGroup Topic="1256" FirstEventInitOnly="false" RelativeObjects="false"> <!-- SubTopic 1256: Agglomeration Lugano -->
+		<AnotoPattern Id="117935" LeftX="6625" TopY="8380" Width="160" Height="160"/>
+	</ObjectGroup>
+
+	
+	<!-- ============================================ SOLUTIONS =========================================================================================== -->	
+	
+	<!-- S1 - Gesamtterritorialkonzept -->
+	<ObjectGroup Topic="130" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="117935" LeftX="12530" TopY="3530" Width="2680" Height="1575"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="14490" TopY="3690" Width="255" Height="255" AppId="130" ButtonId="2001"/> <!-- POI 2001 Hauptachse ÖV -->
+		<GUIObject ObjectType="ExternalApp" LeftX="14465" TopY="4260" Width="270" Height="270" AppId="130" ButtonId="2002"/> <!-- POI 2002 Eisenbahnnetz 2030 -->
+		<GUIObject ObjectType="ExternalApp" LeftX="14925" TopY="3790" Width="250" Height="250" AppId="130" ButtonId="2003"/> <!-- POI 2003 Langsamverkehrsverbindung -->
+		<GUIObject ObjectType="ExternalApp" LeftX="14935" TopY="4285" Width="270" Height="270" AppId="130" ButtonId="2004"/> <!-- POI 2004 Autobahnen, mit Anschlüssen -->
+		<GUIObject ObjectType="ExternalApp" LeftX="13070" TopY="3640" Width="375" Height="375" AppId="130" ButtonId="2005"/> <!-- POI 2005 Kantonales Zentrum -->
+		<GUIObject ObjectType="ExternalApp" LeftX="13700" TopY="3475" Width="160" Height="160" AppId="130" ButtonId="2006"/> <!-- POI 2006 Regionalzentrum -->
+		<GUIObject ObjectType="ExternalApp" LeftX="13660" TopY="3990" Width="160" Height="160" AppId="130" ButtonId="2007"/> <!-- POI 2007 Agglomerationszentralität -->
+		<GUIObject ObjectType="ExternalApp" LeftX="13065" TopY="4250" Width="265" Height="265" AppId="130" ButtonId="2008"/> <!-- POI 2008 Strategischer Standort der Agglomeration -->
+		<GUIObject ObjectType="ExternalApp" LeftX="13120" TopY="4535" Width="265" Height="265" AppId="130" ButtonId="2009"/> <!-- POI 2009 Achse der zukünftigen Dynamik -->
+		<GUIObject ObjectType="ExternalApp" LeftX="12530" TopY="4250" Width="275" Height="275" AppId="130" ButtonId="2010"/> <!-- POI 2010 Städtische Hauptachse -->
+		<GUIObject ObjectType="ExternalApp" LeftX="13665" TopY="4835" Width="220" Height="220" AppId="130" ButtonId="2011"/> <!-- POI 2011 Achse des öffentlichen Lebens -->
+		<GUIObject ObjectType="ExternalApp" LeftX="13585" TopY="4420" Width="275" Height="275" AppId="130" ButtonId="2012"/> <!-- POI 2012 Siedlungsentwicklung ausserhalb der kompakten Agglomeration -->
+	</ObjectGroup>
+
+
+	<!-- S2 - Mobilitätsstrategie für den Öffentlichen Verkehr -->
+	<ObjectGroup Topic="131" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="117935" LeftX="10565" TopY="8655" Width="2850" Height="1870"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="12790" TopY="9470" Width="280" Height="280" AppId="131" ButtonId="2020"/> <!-- POI 2020 SBB-Bahnhof / RER-Haltestelle (bestehend) -->
+		<GUIObject ObjectType="ExternalApp" LeftX="12150" TopY="10300" Width="280" Height="280" AppId="131" ButtonId="2021"/> <!-- POI 2021 SBB-Bahnhof / RER-Haltestelle (geplant) -->
+		<GUIObject ObjectType="ExternalApp" LeftX="12615" TopY="9045" Width="280" Height="280" AppId="131" ButtonId="2022"/> <!-- POI 2022 Parc & Ride / Parc & Rail -->
+		<GUIObject ObjectType="ExternalApp" LeftX="13125" TopY="8690" Width="280" Height="280" AppId="131" ButtonId="2024"/> <!-- POI 2024 Bahnhoferschliessungsareal -->
+		<GUIObject ObjectType="ExternalApp" LeftX="13030" TopY="9735" Width="280" Height="280" AppId="131" ButtonId="2025"/> <!-- POI 2025 Eisenbahnnetz -->
+		<GUIObject ObjectType="ExternalApp" LeftX="12235" TopY="9760" Width="280" Height="280" AppId="131" ButtonId="2026"/> <!-- POI 2026 Schnittstelle ÖV -->
+		<GUIObject ObjectType="ExternalApp" LeftX="11080" TopY="9075" Width="280" Height="280" AppId="131" ButtonId="2027"/> <!-- POI 2027 Hauptbuslinie -->
+		<GUIObject ObjectType="ExternalApp" LeftX="10565" TopY="9075" Width="280" Height="280" AppId="131" ButtonId="2028"/> <!-- POI 2028 Sekundäre Buslinie -->
+		<GUIObject ObjectType="ExternalApp" LeftX="11060" TopY="10140" Width="280" Height="280" AppId="131" ButtonId="2029"/> <!-- POI 2029 Vorstädtische Buslinie -->
+		<GUIObject ObjectType="ExternalApp" LeftX="11370" TopY="9910" Width="280" Height="280" AppId="131" ButtonId="2030"/> <!-- POI 2030 Linie oder Linienverlängerung -->
+		<GUIObject ObjectType="ExternalApp" LeftX="10635" TopY="9675" Width="280" Height="280" AppId="131" ButtonId="2031"/> <!-- POI 2031 Regionale Buslinie -->
+	</ObjectGroup>
+
+	
+	<!-- S3 - Mobilitätsstrategie für den Individualverkehr -->
+	<ObjectGroup Topic="132" FirstEventInitOnly="false" RelativeObjects="false">
+	<AnotoPattern Id="117935" LeftX="13800" TopY="8725" Width="1760" Height="840"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="14210" TopY="9260" Width="280" Height="280" AppId="132" ButtonId="2041"/> <!-- POI 2041 Parc & Ride / Parc & Rail -->
+		<GUIObject ObjectType="ExternalApp" LeftX="15090" TopY="9290" Width="280" Height="280" AppId="132" ButtonId="2043"/> <!-- POI 2043 Strukturierendes überregionales Verkehrsnetz (Autobahn) mit Anschluss -->
+		<GUIObject ObjectType="ExternalApp" LeftX="13800" TopY="9190" Width="280" Height="280" AppId="132" ButtonId="2044"/> <!-- POI 2044 Ortsdurchquerungen mit Verkehrskontrolle -->
+		<GUIObject ObjectType="ExternalApp" LeftX="15270" TopY="8740" Width="280" Height="280" AppId="132" ButtonId="2045"/> <!-- POI 2045 Strukturierendes Regional-/Erschliessungsnetz -->
+		<GUIObject ObjectType="ExternalApp" LeftX="14850" TopY="9000" Width="280" Height="280" AppId="132" ButtonId="2046"/> <!-- POI 2046 Strukturierendes städtisches Netz -->
+		<GUIObject ObjectType="ExternalApp" LeftX="14170" TopY="8790" Width="280" Height="280" AppId="132" ButtonId="2047"/> <!-- POI 2047 Städtisches Erschliessungsnetz -->
+	</ObjectGroup>
+
+	
+	<!-- S4 - Mobilitätsstrategie für den Langsamverkehr -->
+	<ObjectGroup Topic="133" FirstEventInitOnly="false" RelativeObjects="false">
+    <AnotoPattern Id="117935" LeftX="12325" TopY="6395" Width="2240" Height="1290"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="12485" TopY="6880" Width="280" Height="280" AppId="133" ButtonId="2060"/> <!-- POI 2060 SBB-Bahnhof / RER-Haltestelle -->
+		<GUIObject ObjectType="ExternalApp" LeftX="13125" TopY="6895" Width="280" Height="280" AppId="133" ButtonId="2061"/> <!-- POI 2061 Eisenbahnnetz -->
+		<GUIObject ObjectType="ExternalApp" LeftX="13275" TopY="7370" Width="280" Height="280" AppId="133" ButtonId="2062"/> <!-- POI 2062 Bike & Ride -->
+		<GUIObject ObjectType="ExternalApp" LeftX="12640" TopY="7345" Width="280" Height="280" AppId="133" ButtonId="2063"/> <!-- POI 2063 Veloausleihstation -->
+		<GUIObject ObjectType="ExternalApp" LeftX="13890" TopY="7360" Width="280" Height="280" AppId="133" ButtonId="2064"/> <!-- POI 2064 Velostation -->
+		<GUIObject ObjectType="ExternalApp" LeftX="12370" TopY="6430" Width="280" Height="280" AppId="133" ButtonId="2065"/> <!-- POI 2065 Strukturierendes Agglomerationsnetz -->
+		<GUIObject ObjectType="ExternalApp" LeftX="12955" TopY="6430" Width="280" Height="280" AppId="133" ButtonId="2066"/> <!-- POI 2066 Strukturierendes Primär-/Sekundärnetz -->
+		<GUIObject ObjectType="ExternalApp" LeftX="14270" TopY="6430" Width="280" Height="280" AppId="133" ButtonId="2067"/> <!-- POI 2067 Freizeit-/Landschaftsnetz -->
+		<GUIObject ObjectType="ExternalApp" LeftX="13545" TopY="6450" Width="280" Height="280" AppId="133" ButtonId="2068"/> <!-- POI 2068 Velotourismusnetz -->
+		<GUIObject ObjectType="ExternalApp" LeftX="13755" TopY="6890" Width="280" Height="280" AppId="133" ButtonId="2069"/> <!-- POI 2069 Regionales Netz-->
+	</ObjectGroup>
+
+
+	<!-- Gesture 1 Eco Driving -->
+	<ObjectGroup Topic="1341" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="117935" LeftX="13795" TopY="9935" Width="1195" Height="1000"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="13795" TopY="9935" Width="1195" Height="1000" AppId="1341" ButtonId="11"/> <!-- Media Content Element Gesture 1 -->
+	</ObjectGroup>
+
+
+	<!-- Gesture 2 Bus Statt Auto -->
+	<ObjectGroup Topic="1342" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="117935" LeftX="14480" TopY="5225" Width="920" Height="835"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="14480" TopY="5225" Width="920" Height="835" AppId="1342" ButtonId="12"/> <!-- Media Content Element Gesture 2 -->
+	</ObjectGroup>
+
+
+	<!-- Gesture 3 Fahrrad statt Auto -->
+	<ObjectGroup Topic="1343" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="117935" LeftX="11010" TopY="6825" Width="965" Height="850"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="11010" TopY="6825" Width="965" Height="850" AppId="1343" ButtonId="13"/> <!-- Media Content Element Gesture 3 -->
+	</ObjectGroup>
+
+	
+	<!-- Gesture 4 Fahrgemeinschaften -->
+	<ObjectGroup Topic="1344" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="117935" LeftX="14440" TopY="6640" Width="1255" Height="1015"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="14440" TopY="6640" Width="1255" Height="1015" AppId="1344" ButtonId="14"/> <!-- Media Content Element Gesture 4 -->
+	</ObjectGroup>
+
+
+	<!-- Gesture 5 Reifendruck-->
+	<ObjectGroup Topic="1345" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="117935" LeftX="11095" TopY="5115" Width="1560" Height="1145"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="11095" TopY="5115" Width="1560" Height="1145" AppId="1345" ButtonId="15"/> <!-- Media Content Element Gesture 5 -->
+	</ObjectGroup>
+
+
+	<!-- Gesture 6 zu Fuß statt Auto -->
+	<ObjectGroup Topic="1346" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="117935" LeftX="9790" TopY="6935" Width="1015" Height="890"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="9790" TopY="6935" Width="1015" Height="890" AppId="1346" ButtonId="16"/> <!-- Media Content Element Gesture 6 -->
+	</ObjectGroup>
+    
+    
+    
+    <!-- ================================================================================================================================================== -->
+    <!-- ======================================================= HABITAT ================================================================================== -->
+    <!-- ================================================================================================================================================== -->
+
+    <!-- Language -->
+    <ObjectGroup IsGlobal="true" FirstEventInitOnly="false">
+      <AnotoPattern Id="17937" LeftX="380" TopY="10685" Width="900" Height="300"/>
+	  <GUIObject ObjectType="SetLanguage"  LeftX="850" TopY="10685" Width="300" Height="300" LanguageId="0"/>  <!-- German -->
+	  <GUIObject ObjectType="SetLanguage"  LeftX="380" TopY="10685" Width="300" Height="300" LanguageId="1"/>  <!-- French -->    
+    </ObjectGroup>
+    
+    <!-- Credits -->
+    <ObjectGroup Topic="301" FirstEventInitOnly="false" RelativeObjects="false">
+      <AnotoPattern Id="17937" LeftX="1320" TopY="10685" Width="300" Height="300"/>
+	  <GUIObject ObjectType="ExternalApp" LeftX="1320" TopY="10685" Width="300" Height="300" AppId="301" ButtonId="101"/> <!-- Media Content Element Credit Habitat -->
+    </ObjectGroup>    
+    
+
+    <!-- ============================================ EVOLUTION =========================================================================================== -->
+
+    <!-- E1a - Chronologie -->
+	<ObjectGroup Topic="204" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="750" TopY="2630" Width="2100" Height="1820"/>
+        <GUIObject ObjectType="SpecialTopic" LeftX="1240"  TopY="2700" Width="400" Height="400" Command="Reset"/> <!-- Info Button -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="800" TopY="2900" Width="400" Height="400" AppId="204" ButtonId="0"/> <!-- Visible/Invisible Button -->
+        <GUIObject ObjectType="TimeSet"      LeftX="900"  TopY="4090" Width="300" Height="300" Year="1850" />
+		<GUIObject ObjectType="TimeSet"      LeftX="910" TopY="3430" Width="300" Height="300" Year="1900" />
+        <GUIObject ObjectType="TimeSet"      LeftX="1300" TopY="3770" Width="300" Height="300" Year="1945" />
+        <GUIObject ObjectType="TimeSet"      LeftX="1900" TopY="3660" Width="300" Height="300" Year="1975" />
+        <GUIObject ObjectType="TimeSet"      LeftX="1475" TopY="3130" Width="300" Height="300" Year="1993" />
+        <GUIObject ObjectType="TimeSet"      LeftX="2050" TopY="3090" Width="300" Height="300" Year="1998" />
+		<GUIObject ObjectType="TimeSet"      LeftX="2490" TopY="3200" Width="300" Height="300" Year="2004" />
+		<GUIObject ObjectType="TimeSet"      LeftX="2420" TopY="2730" Width="300" Height="300" Year="2012" />  
+	</ObjectGroup>
+ 
+ 
+    <!-- E1b - Demographie -->
+    <ObjectGroup Topic="205" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="3215" TopY="2650" Width="2045" Height="1620"/>       
+        <GUIObject ObjectType="SpecialTopic" LeftX="3515" TopY="2650" Width="400" Height="400" Command="Reset"/> <!-- Info Button -->
+		<GUIObject ObjectType="ExternalApp"  LeftX="3780" TopY="3020" Width="400" Height="400" AppId="1" ButtonId="1"/> <!-- male -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="3215" TopY="3020" Width="400" Height="400" AppId="1" ButtonId="2"/> <!-- female -->
+        
+        <GUIObject ObjectType="TimeSet"      LeftX="4300" TopY="3020" Width="300" Height="300" Year="1970" />
+		<GUIObject ObjectType="TimeSet"      LeftX="4570" TopY="3280" Width="300" Height="300" Year="1980" />
+        <GUIObject ObjectType="TimeSet"      LeftX="4840" TopY="3020" Width="300" Height="300" Year="1990" />
+        <GUIObject ObjectType="TimeSet"      LeftX="4550" TopY="2790" Width="300" Height="300" Year="2000" />
+
+
+        <GUIObject ObjectType="ObjectSet" LeftX="3540" TopY="3760" Width="1720" Height="160" Type="6" verticalOriented="false">
+            <Element Id = "20" Width = "172" Height = "160" /> <!-- AGE  0-4 -->
+            <Element Id = "21" Width = "172" Height = "160" /> <!-- AGE  5-9 -->
+            <Element Id = "22" Width = "172" Height = "160" /> <!-- AGE 10-14 -->
+            <Element Id = "23" Width = "172" Height = "160" /> <!-- AGE 15-29 -->
+            <Element Id = "24" Width = "172" Height = "160" /> <!-- AGE 20-24 -->
+            <Element Id = "25" Width = "172" Height = "160" /> <!-- AGE 25-29 -->
+            <Element Id = "26" Width = "172" Height = "160" /> <!-- AGE 30-34 -->
+            <Element Id = "27" Width = "172" Height = "160" /> <!-- AGE 35-39 -->
+            <Element Id = "28" Width = "172" Height = "160" /> <!-- AGE 40-44 -->
+            <Element Id = "29" Width = "172" Height = "160" /> <!-- AGE 45-49 -->
+        </GUIObject>
+      
+        <GUIObject ObjectType="ObjectSet" LeftX="3210" TopY="4115" Width="1540" Height="160" Type="6" verticalOriented="false">
+            <Element Id = "30" Width = "172" Height = "160" /> <!-- AGE 50-54 -->
+            <Element Id = "31" Width = "172" Height = "160" /> <!-- AGE 55-59 -->
+            <Element Id = "32" Width = "172" Height = "160" /> <!-- AGE 60-64 -->
+            <Element Id = "33" Width = "172" Height = "160" /> <!-- AGE 65-69 -->
+            <Element Id = "34" Width = "172" Height = "160" /> <!-- AGE 70-74 -->
+            <Element Id = "35" Width = "172" Height = "160" /> <!-- AGE 75-79 -->
+            <Element Id = "36" Width = "172" Height = "160" /> <!-- AGE 80-84 -->
+            <Element Id = "37" Width = "172" Height = "160" /> <!-- AGE 85-89 -->
+            <Element Id = "38" Width = "172" Height = "160" /> <!-- AGE 90+ -->
+        </GUIObject>
+	</ObjectGroup>
+
+
+    <!-- E1c - Migration -->
+    <ObjectGroup Topic="206" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="1800" TopY="4960" Width="2100" Height="1300"/>
+        <GUIObject ObjectType="ExternalApp"  LeftX="3410" TopY="5785" Width="400" Height="400" AppId="1" ButtonId="1"/>   <!-- male -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="2740" TopY="5760" Width="400" Height="400" AppId="1" ButtonId="2"/>   <!-- female -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="2940" TopY="4960" Width="400" Height="400" AppId="7" ButtonId="40"/>  <!-- swiss -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="3315" TopY="4960" Width="400" Height="400" AppId="7" ButtonId="41"/>  <!-- foreigners -->
+        <GUIObject ObjectType="SpecialTopic" LeftX="1820" TopY="5200" Width="380" Height="250" Command="GoToPast"/>       <!-- prev year -->
+        <GUIObject ObjectType="SpecialTopic" LeftX="2230" TopY="5200" Width="380" Height="250" Command="GoToFuture"/>     <!-- next year -->
+	</ObjectGroup>
+    
+    
+    <!-- E2 - Agglo in Bildern -->
+    <ObjectGroup Topic="208" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="750" TopY="5240" Width="420" Height="420"/>
+		<GUIObject ObjectType="SpecialTopic" LeftX="750" TopY="5240" Width="420"  Height="420"  Command="Reset"/> <!-- Info Button -->
+	</ObjectGroup>
+    
+    <!-- E3 - Entwicklung der Bodennutzung und -bedeckung -->
+    <ObjectGroup Topic="209" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="3370" TopY="7060" Width="1000" Height="1350"/>
+        <GUIObject ObjectType="SpecialTopic" LeftX="3700" TopY="7060" Width="400" Height="400"  Command="Reset"/>         <!-- Info Button -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="3700" TopY="8100" Width="400" Height="300"  AppId="0" ButtonId="4"/>  <!-- show POI charts -->
+		<GUIObject ObjectType="TimeSet"      LeftX="3370" TopY="7410" Width="300" Height="300"  Year="1980" />
+        <GUIObject ObjectType="TimeSet"      LeftX="3730" TopY="7600" Width="300" Height="300"  Year="1995" />
+        <GUIObject ObjectType="TimeSet"      LeftX="4080" TopY="7410" Width="300" Height="300"  Year="2005" />        
+	</ObjectGroup>
+    
+    <!-- E4 - Bebaute Fläche -->
+    <ObjectGroup Topic="210" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="415" TopY="6940" Width="2300" Height="1700"/>
+        <GUIObject ObjectType="SpecialTopic" LeftX="1340" TopY="8055" Width="400" Height="400"  Command="Reset"/>             <!-- Info Button -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="420"  TopY="7380" Width="300" Height="300" AppId="210" ButtonId="3050"/>  <!-- 1900 -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="570"  TopY="7960" Width="300" Height="300" AppId="210" ButtonId="3051"/>  <!-- 1945 -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="890"  TopY="7480" Width="300" Height="300" AppId="210" ButtonId="3052"/>  <!-- 1975 -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="910"  TopY="6940" Width="300" Height="300" AppId="210" ButtonId="3053"/>  <!-- 1993-->
+        <GUIObject ObjectType="ExternalApp"  LeftX="1365" TopY="7215" Width="300" Height="300" AppId="210" ButtonId="3054"/>  <!-- 1998-->
+        <GUIObject ObjectType="ExternalApp"  LeftX="1755" TopY="7635" Width="300" Height="300" AppId="210" ButtonId="3055"/>  <!-- 2004-->
+        <GUIObject ObjectType="ExternalApp"  LeftX="2245" TopY="7710" Width="300" Height="300" AppId="210" ButtonId="3056"/>  <!-- 2012-->
+	</ObjectGroup>
+
+    <!-- E5 - Hydriographisches Netzwerk -->
+    <ObjectGroup Topic="211" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="4025" TopY="9535" Width="1250" Height="550"/>
+        <GUIObject ObjectType="SpecialTopic" LeftX="4025" TopY="9535" Width="400" Height="400"  Command="Reset"/>  <!-- Info Button -->
+		<GUIObject ObjectType="TimeSet"      LeftX="4555" TopY="9630" Width="300" Height="300"  Year="1880" />
+        <GUIObject ObjectType="TimeSet"      LeftX="4975" TopY="9790" Width="300" Height="300"  Year="2000" />
+	</ObjectGroup>
+
+    <!-- E7 - Religion und Sprache -->
+    <ObjectGroup Topic="212" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="1640" TopY="9080" Width="1600" Height="1700"/>
+        <GUIObject ObjectType="SpecialTopic" LeftX="1640" TopY="9790"  Width="400" Height="400"  Command="Reset"/>     <!-- Info Button -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="2865" TopY="9625"  Width="400" Height="300"  AppId="0" ButtonId="4"/>  <!-- show POI charts -->
+		<GUIObject ObjectType="TimeSet"      LeftX="1740" TopY="9080"  Width="300" Height="300"  Year="1970" />
+        <GUIObject ObjectType="TimeSet"      LeftX="2020" TopY="9550"  Width="300" Height="300"  Year="1980" />
+        <GUIObject ObjectType="TimeSet"      LeftX="2460" TopY="9895"  Width="300" Height="300"  Year="1990" />
+        <GUIObject ObjectType="TimeSet"      LeftX="2620" TopY="10400" Width="300" Height="300"  Year="2000" />   
+	</ObjectGroup>  
+
+    
+    <!-- ============================================ CHALLENGES ========================================================================================== -->
+    
+    <!-- C1 - Entwicklung der Agglo -->
+    <ObjectGroup Topic="220" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="5700" TopY="2900" Width="1800" Height="1000"/>
+        <GUIObject ObjectType="ExternalApp"  LeftX="5700" TopY="3500" Width="300" Height="300" AppId="220" ButtonId="3400"/>  <!-- Layer 3400 Zersiedelung -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="6820" TopY="2900" Width="300" Height="300" AppId="220" ButtonId="3401"/>  <!-- Layer 3401 Landschaftszonen -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="6100" TopY="3270" Width="300" Height="300" AppId="220" ButtonId="3402"/>  <!-- Layer 3402 Landschaftskorridor -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="7170" TopY="3575" Width="300" Height="300" AppId="220" ButtonId="3403"/>  <!-- Layer 3403 Grünflächen -->
+	</ObjectGroup>
+    
+    <!-- C2 - Städtisches Wachstum -->
+    <ObjectGroup Topic="221" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="8540" TopY="3400" Width="1150" Height="500"/>
+        <GUIObject ObjectType="SpecialTopic" LeftX="8540" TopY="3400" Width="450" Height="450"  Command="Reset"/>         <!-- Info Button -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="9300" TopY="3460" Width="400" Height="300"  AppId="0" ButtonId="4"/>  <!-- show POI charts --> 
+	</ObjectGroup>
+
+    <!-- TODO C3 - Beschäftigungsrate -->
+    <ObjectGroup Topic="222" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="5455" TopY="5030" Width="800" Height="800"/>
+        <GUIObject ObjectType="SpecialTopic" LeftX="5455" TopY="5035" Width="400" Height="400" Command="Reset"/>              <!-- Info Button -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="5630" TopY="5450" Width="300" Height="300" AppId="222" ButtonId="3270"/>  <!-- Layer 4501 Beschäftigungsrate -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="5920" TopY="5120" Width="300" Height="300" AppId="222" ButtonId="3271"/>  <!-- Layer 4502 Bevölkerungsrate -->        
+	</ObjectGroup>
+
+    <!-- C4 - Zersiedelung-->
+    <ObjectGroup Topic="223" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="7230" TopY="5015" Width="450" Height="450"/>
+        <GUIObject ObjectType="ExternalApp"  LeftX="7230" TopY="5015" Width="450" Height="450"  AppId="223" ButtonId="20"/>  <!-- start animation (CE: 20) -->
+	</ObjectGroup>
+
+    <!-- C5 - Flächenplanung -->
+    <ObjectGroup Topic="224" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="8120" TopY="5245" Width="1900" Height="1600"/>
+        <GUIObject ObjectType="SpecialTopic" LeftX="8185" TopY="5240" Width="400" Height="400"   Command="Reset"/>             <!-- Info Button -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="8690" TopY="5270" Width="300" Height="300"  AppId="224" ButtonId="3500"/>  <!-- ZV -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="9155" TopY="5270" Width="300" Height="300"  AppId="224" ButtonId="3501"/>  <!-- ZRHD -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="9615" TopY="5270" Width="300" Height="300"  AppId="224" ButtonId="3502"/>  <!-- ZRMD -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="8495" TopY="5660" Width="300" Height="300"  AppId="224" ButtonId="3503"/>  <!-- ZRFD -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="8950" TopY="5660" Width="300" Height="300"  AppId="224" ButtonId="3504"/>  <!-- ZM -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="9400" TopY="5660" Width="300" Height="300"  AppId="224" ButtonId="3505"/>  <!-- ZACT -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="8120" TopY="6060" Width="300" Height="300"  AppId="224" ButtonId="3506"/>  <!-- ZIG -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="8580" TopY="6060" Width="300" Height="300"  AppId="224" ButtonId="3507"/>  <!-- ZSP -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="9040" TopY="6060" Width="300" Height="300"  AppId="224" ButtonId="3508"/>  <!-- ZC -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="9500" TopY="6060" Width="300" Height="300"  AppId="224" ButtonId="3509"/>  <!-- ZL -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="8200" TopY="6470" Width="300" Height="300"  AppId="224" ButtonId="3510"/>  <!-- PHM -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="8660" TopY="6470" Width="300" Height="300"  AppId="224" ButtonId="3511"/>  <!-- ZG -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="9130" TopY="6470" Width="300" Height="300"  AppId="224" ButtonId="3512"/>  <!-- ZP -->
+	</ObjectGroup>
+
+    <!-- C6 -  Amphibien und Reptilien-->
+    <ObjectGroup Topic="225" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="6060" TopY="6540" Width="1200" Height="500"/>
+        <GUIObject ObjectType="ExternalApp"  LeftX="6060" TopY="6540" Width="300" Height="300"  AppId="225" ButtonId="3600"/>  <!-- Amphibien -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="6480" TopY="6540" Width="300" Height="300"  AppId="225" ButtonId="3601"/>  <!-- Feuersalamander -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="6900" TopY="6540" Width="300" Height="300"  AppId="225" ButtonId="3602"/>  <!-- Reptilien -->
+	</ObjectGroup>
+
+    <!-- C7 - Invasive Pflanzenarten -->
+    <ObjectGroup Topic="226" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="5715" TopY="8225" Width="300" Height="300"/>
+	</ObjectGroup>    
+
+    <!-- C7 - Bedrohte Pflanzenarten -->
+    <ObjectGroup Topic="250" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="6215" TopY="7965" Width="300" Height="300"/>
+	</ObjectGroup>
+
+    <!-- C8 - Brutvogelarten -->
+    <ObjectGroup Topic="227" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="7255" TopY="7950" Width="600" Height="600"/>
+ 		<GUIObject ObjectType="SpecialTopic" LeftX="7255" TopY="8280" Width="250" Height="210" Command="ContentControlDown"/>   <!-- prev-->
+		<GUIObject ObjectType="SpecialTopic" LeftX="7525" TopY="8280" Width="250" Height="210" Command="ContentControlUp"/>     <!-- next -->
+	</ObjectGroup>
+
+    <!-- C10 -  Bildungseinrichtungen -->
+    <ObjectGroup Topic="229" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="10430" TopY="4635" Width="1100" Height="1100"/>
+        <GUIObject ObjectType="ExternalApp"  LeftX="11170" TopY="5345" Width="300" Height="300"  AppId="229" ButtonId="3100"/>  <!-- Primarschule -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="11065" TopY="4635" Width="300" Height="300"  AppId="229" ButtonId="3101"/>  <!-- Sekundarschule -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="10430" TopY="5400" Width="300" Height="300"  AppId="229" ButtonId="3102"/>  <!-- Hochschulen -->
+	</ObjectGroup>
+    
+    <!-- C11 -  Soziale Einrichtungen-->
+    <ObjectGroup Topic="230" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="8265" TopY="9525" Width="2000" Height="900"/>
+        <GUIObject ObjectType="ExternalApp"  LeftX="9380" TopY="9525"  Width="300" Height="300"  AppId="230" ButtonId="3201"/>  <!-- Spitäler -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="8265" TopY="9750"  Width="300" Height="300"  AppId="230" ButtonId="3202"/>  <!-- Kinderbetreung -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="9865" TopY="10035" Width="300" Height="300"  AppId="230" ButtonId="3203"/>  <!-- Pflegeeinrichtungen  -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="8920" TopY="10060" Width="300" Height="300"  AppId="230" ButtonId="3204"/>  <!-- Beratung und Betreuung  -->
+	</ObjectGroup>
+
+    <!-- C12 -  Kulurelle Einrichtungen -->
+    <ObjectGroup Topic="231" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="9025" TopY="7980" Width="1400" Height="400"/>
+        <GUIObject ObjectType="ExternalApp"  LeftX="9530"  TopY="7980" Width="300" Height="300"  AppId="231" ButtonId="3301"/>  <!-- Theater und Konzert -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="9025"  TopY="7980" Width="300" Height="300"  AppId="231" ButtonId="3302"/>  <!-- Museen -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="10035" TopY="7980" Width="300" Height="300"  AppId="231" ButtonId="3303"/>  <!-- Kino -->
+	</ObjectGroup>
+    
+    <!-- C13 -  Natürlicher Lebensraum -->
+    <ObjectGroup Topic="232" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="5860" TopY="9285" Width="1800" Height="1400"/>
+        <GUIObject ObjectType="SpecialTopic" LeftX="7130" TopY="9500"  Width="400" Height="400"   Command="Reset"/>             <!-- Info Button -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="5860" TopY="9285"  Width="300" Height="300"  AppId="232" ButtonId="3700"/>  <!-- Moore -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="6110" TopY="9685"  Width="300" Height="300"  AppId="232" ButtonId="3701"/>  <!-- Auen -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="6540" TopY="9740"  Width="300" Height="300"  AppId="232" ButtonId="3703"/>  <!-- Naturschutzgebiete -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="6930" TopY="10000" Width="300" Height="300"  AppId="232" ButtonId="3702"/>  <!-- Hecken -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="7315" TopY="10215" Width="300" Height="300"  AppId="232" ButtonId="3704"/>  <!-- Landschaftsschutzgebiete -->
+	</ObjectGroup>
+    
+    <!-- C14 -  Standorte mit hoher Belastung -->
+    <ObjectGroup Topic="251" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="10380" TopY="9230" Width="500" Height="500"/>
+        <GUIObject ObjectType="SpecialTopic" LeftX="10380" TopY="9230"  Width="300" Height="300"   Command="Reset"/>
+	</ObjectGroup>
+
+    <!-- C14 - Urbanes Bodenbeobachtungsnetz -->
+    <ObjectGroup Topic="252" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="11080" TopY="9230" Width="500" Height="500"/>
+        <GUIObject ObjectType="SpecialTopic" LeftX="11080" TopY="9230"  Width="300" Height="300"   Command="Reset"/>
+	</ObjectGroup>
+    
+    <!-- ============================================ SOLUTIONS =========================================================================================== -->
+    
+    <!-- S1 -  Gesamtterritorialkonzept -->
+    <ObjectGroup Topic="240" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="10995" TopY="2800" Width="1800" Height="1200"/>
+        <GUIObject ObjectType="ExternalApp"  LeftX="11080" TopY="2900" Width="300" Height="300"  AppId="240" ButtonId="4001"/>  <!-- Kantonales und regionales Zentrum -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="11565" TopY="2800" Width="300" Height="300"  AppId="240" ButtonId="4002"/>  <!-- Agglomerationszentralität -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="10995" TopY="3390" Width="300" Height="300"  AppId="240" ButtonId="4003"/>  <!-- Achse der zukünftigen Dynamik -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="12405" TopY="3390" Width="300" Height="300"  AppId="240" ButtonId="4004"/>  <!-- Achse des öffentlichen Lebens -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="11420" TopY="3670" Width="300" Height="300"  AppId="240" ButtonId="4005"/>  <!-- Städtische Hauptachse -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="11890" TopY="3470" Width="300" Height="300"  AppId="240" ButtonId="4006"/>  <!-- Siedlungsentwicklung ausserhalb der kompakten Agglomeration -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="11550" TopY="3100" Width="300" Height="300"  AppId="240" ButtonId="4007"/>  <!-- Städtische Parks -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="12060" TopY="2900" Width="300" Height="300"  AppId="240" ButtonId="4008"/>  <!-- Städtischer Park der Saane -->
+	</ObjectGroup>
+ 
+ 
+    <!-- S2 -  Siedlungsentwicklungsstrategie -->
+    <ObjectGroup Topic="241" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="13980" TopY="9475" Width="900" Height="900"/>
+        <GUIObject ObjectType="ExternalApp"  LeftX="14340" TopY="9475"  Width="300" Height="300"  AppId="241" ButtonId="4101"/>  <!-- Äußere Bauzonengrenze -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="13980" TopY="9775"  Width="300" Height="300"  AppId="241" ButtonId="4102"/>  <!-- Innere Bauzonengrenze -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="14555" TopY="9815"  Width="300" Height="300"  AppId="241" ButtonId="4103"/>  <!-- Strategische Standorte -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="14270" TopY="10030" Width="300" Height="300"  AppId="241" ButtonId="4104"/>  <!-- Strategischer Ausnahmestandort Bertigny -->
+	</ObjectGroup>
+
+    
+    <!-- S3 -  Verdichtungs- und Verteilungsplan -->
+    <ObjectGroup Topic="242" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="12390" TopY="5000" Width="1200" Height="800"/>
+        <GUIObject ObjectType="ExternalApp"  LeftX="12390" TopY="5000" Width="300" Height="300"  AppId="242" ButtonId="4201"/>  <!-- Wohngebiet -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="12830" TopY="5000" Width="300" Height="300"  AppId="242" ButtonId="4202"/>  <!-- gemischte Fläche -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="13240" TopY="5000" Width="300" Height="300"  AppId="242" ButtonId="4203"/>  <!-- Industrie und Gewerbe -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="12620" TopY="5400" Width="300" Height="300"  AppId="242" ButtonId="4204"/>  <!-- stabile städtische Wachstumsfläche -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="13065" TopY="5400" Width="300" Height="300"  AppId="242" ButtonId="4205"/>  <!-- Städtische Parks -->
+	</ObjectGroup>
+
+    
+    <!-- S4 -  Verdichtung, Ausdehnung und stabiles Wachstum -->
+    <ObjectGroup Topic="243" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="13500" TopY="3100" Width="1650" Height="875"/>
+        <GUIObject ObjectType="ExternalApp"  LeftX="13500" TopY="3100" Width="300" Height="300"  AppId="243" ButtonId="4301"/>  <!-- Fläche mit stabilem Wachstum -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="13950" TopY="3660" Width="300" Height="300"  AppId="243" ButtonId="4302"/>  <!-- Fläche mit Verdichtung -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="14260" TopY="3220" Width="300" Height="300"  AppId="243" ButtonId="4303"/>  <!-- Flächen in Ausdehnung -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="14775" TopY="3290" Width="300" Height="300"  AppId="243" ButtonId="4304"/>  <!-- neue Ausdehnungsfläche -->
+	</ObjectGroup>
+
+    <!-- S5 -  Verdichtung, Natur und Landschaft -->
+    <ObjectGroup Topic="244" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="10700" TopY="6520" Width="3600" Height="1400"/>
+        <GUIObject ObjectType="ExternalApp"  LeftX="10700" TopY="6955" Width="300" Height="300"  AppId="244" ButtonId="4401"/>  <!-- Strategischer Standort Bertigny -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="11100" TopY="7300" Width="300" Height="300"  AppId="244" ButtonId="4402"/>  <!-- Landwirtschaft in Bertigny -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="11640" TopY="7470" Width="300" Height="300"  AppId="244" ButtonId="4403"/>  <!-- Ökologische Korridore -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="12150" TopY="7390" Width="300" Height="300"  AppId="244" ButtonId="4404"/>  <!-- Eisenbahnlinien -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="12600" TopY="7130" Width="300" Height="300"  AppId="244" ButtonId="4405"/>  <!-- Städtische Pärke -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="13000" TopY="6720" Width="300" Height="300"  AppId="244" ButtonId="4406"/>  <!-- Bewohnte Pärke -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="13475" TopY="6520" Width="300" Height="300"  AppId="244" ButtonId="4407"/>  <!-- Park mit spezieller Funktion (kulturelle Themenparks) -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="13890" TopY="6765" Width="300" Height="300"  AppId="244" ButtonId="4408"/>  <!-- Gebiete mit Einschränkungen aufgrund ökologischer Sensibilitäten -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="13945" TopY="7200" Width="300" Height="300"  AppId="244" ButtonId="4409"/>  <!-- Siedlungsgebiet mit grosser ökologischer Bedeutung -->
+        <GUIObject ObjectType="ExternalApp"  LeftX="13500" TopY="7520" Width="300" Height="300"  AppId="244" ButtonId="4410"/>  <!-- Spannungsfelder mit dem Erlebnispark der Saane -->
+	</ObjectGroup>
+    
+    <!-- S7 -  Minergie Content Element -->
+    <ObjectGroup Topic="247" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="12685" TopY="9620" Width="300" Height="300"/>
+        <GUIObject ObjectType="ExternalApp"  LeftX="12685" TopY="9620" Width="300" Height="300"  AppId="247" ButtonId="22"/>  <!-- Minergie Content Element 22 -->
+	</ObjectGroup>
+    
+    <!-- S7 -  Minergie POIs -->
+    <ObjectGroup Topic="248" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="12265" TopY="9620" Width="300" Height="300"/>
+        <GUIObject ObjectType="SpecialTopic" LeftX="12265"  TopY="9620" Width="300" Height="300" Command="Reset"/> <!-- Info Button -->
+	</ObjectGroup>    
+    
+    
+    
+	<!-- Gesture 1 Recycling -->
+	<ObjectGroup Topic="3001" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="14400" TopY="3970" Width="1200" Height="990"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="14400" TopY="3970" Width="1200" Height="990" AppId="3001" ButtonId="31"/> <!-- Media Content Element Gesture 1 -->
+	</ObjectGroup>
+
+
+	<!-- Gesture 2 Reduce Temperature -->
+	<ObjectGroup Topic="3002" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="14060" TopY="4950" Width="1100" Height="850"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="14060" TopY="4950" Width="1100" Height="850" AppId="3002" ButtonId="32"/> <!-- Media Content Element Gesture 2 -->
+	</ObjectGroup>
+
+
+	<!-- Gesture 3 Water Savers -->
+	<ObjectGroup Topic="3003" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="14475" TopY="7235" Width="1100" Height="1000"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="14475" TopY="7235" Width="1100" Height="1000" AppId="3003" ButtonId="33"/> <!-- Media Content Element Gesture 3 -->
+	</ObjectGroup>
+
+	
+	<!-- Gesture 4 Renewable Energy for Heating -->
+	<ObjectGroup Topic="3004" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="12180" TopY="8085" Width="1000" Height="820"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="12180" TopY="8085" Width="1000" Height="820" AppId="3004" ButtonId="34"/> <!-- Media Content Element Gesture 4 -->
+	</ObjectGroup>
+
+
+	<!-- Gesture 5 Minergy -->
+	<ObjectGroup Topic="3005" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="10760" TopY="9840" Width="1050" Height="900"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="10760" TopY="9840" Width="1050" Height="900" AppId="3005" ButtonId="35"/> <!-- Media Content Element Gesture 5 -->
+	</ObjectGroup>
+
+
+	<!-- Gesture 6 Triple Glass Windows-->
+	<ObjectGroup Topic="3006" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17937" LeftX="14675" TopY="5845" Width="900" Height="900"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="14675" TopY="5845" Width="900" Height="900" AppId="3006" ButtonId="36"/> <!-- Media Content Element Gesture 6 -->
+	</ObjectGroup>
+	
+  </ObjectSet>
+  
+
+  
+
+    <!-- ================================================================================================================================================== -->
+    <!-- ======================================================= TABLE ==================================================================================== -->
+    <!-- ================================================================================================================================================== -->    
+ 
+
+  <ObjectSet Id="3"> 
+	
+	<!-- =============== POI/MAP INTERACTION TISCH 1m x 1m =============== -->
+    <!--<ObjectGroup IsGlobal="true" FirstEventInitOnly="false" OverlappingObjects="false">
+		<AnotoPattern Id="17924" LeftX="360" TopY="380" Width="25910" Height="25920"/>
+		<GUIObject ObjectType="SpecialTopic" LeftX="14550" TopY="23770" Width="570" Height="570" Command="ZoomOut"/>
+		<GUIObject ObjectType="SpecialTopic" LeftX="14550" TopY="24580" Width="570" Height="570" Command="ZoomIn"/>	
+		<GUIObject ObjectType="POISelect"   LeftX="11470" TopY="24890" Width="630" Height="300" Select="previous"/>
+		<GUIObject ObjectType="POISelect"   LeftX="12100" TopY="24890" Width="630" Height="300" Select="next"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="13070" TopY="23730" Width="880" Height="770" AppId="0" ButtonId="2"/>
+		<GUIObject ObjectType="MoveAndZoomAbsolute" LeftX="2550" TopY="3600" Width="21270" Height="19010" CircleSelectionTime="500" LeftValue="7.03617" RightValue="7.23216" TopValue="46.88323" BottomValue="46.76263"/>
+    </ObjectGroup>-->
+
+	<!-- =============== POI/MAP INTERACTION TISCH DIN A3 OVERLAPPING MIT TISCH, NUR EINES AKTIVIEREN =============== -->
+    <!-- <ObjectGroup IsGlobal="true" FirstEventInitOnly="false" OverlappingObjects="true">
+		<AnotoPattern Id="17924" LeftX="1700" TopY="530" Width="9140" Height="7280"/>
+		<GUIObject ObjectType="SpecialTopic" LeftX="10530" TopY="7030" Width="220" Height="220" Command="ZoomOut"/>
+		<GUIObject ObjectType="SpecialTopic" LeftX="10530" TopY="7330" Width="220" Height="220" Command="ZoomIn"/>	
+		<GUIObject ObjectType="POISelect"   LeftX="9350" TopY="7430" Width="250" Height="170" Select="previous"/>
+		<GUIObject ObjectType="POISelect"   LeftX="9600" TopY="7430" Width="250" Height="170" Select="next"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="9960" TopY="7000" Width="330" Height="300" AppId="0" ButtonId="2"/>
+		<GUIObject ObjectType="MoveAndZoomAbsolute" LeftX="1700" TopY="530" Width="8140" Height="7280" CircleSelectionTime="1750" LeftValue="7.03617" RightValue="7.23216" TopValue="46.88323" BottomValue="46.76263"/>	  
+    </ObjectGroup> -->
+    
+	
+	
+	<!-- Table Interface 1 VERTICAL -->
+    <ObjectGroup IsGlobal="true" FirstEventInitOnly="false">
+	  <AnotoPattern Id="62990" LeftX="2255" TopY="28435" Width="1350" Height="2950"/>	
+	  <GUIObject ObjectType="POISelect"    LeftX="2255" TopY="28435" Width="380" Height="325" Select="previous"/>
+	  <GUIObject ObjectType="POISelect"    LeftX="2255" TopY="29040" Width="380" Height="325" Select="next"/>
+      <GUIObject ObjectType="ExternalApp"  LeftX="2255" TopY="30015" Width="380" Height="325" AppId="0" ButtonId="0"/>  <!-- prev POI media -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="2255" TopY="30620" Width="380" Height="325" AppId="0" ButtonId="1"/>  <!-- next POI media -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="2760" TopY="30620" Width="800" Height="900" AppId="0" ButtonId="2"/>  <!-- show POI images -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="2760" TopY="29600" Width="800" Height="900" AppId="0" ButtonId="4"/>  <!-- show POI charts -->
+	</ObjectGroup>
+    <ObjectGroup IsGlobal="true" FirstEventInitOnly="false">
+	  <AnotoPattern Id="62997" LeftX="2195" TopY="yy" Width="800" Height="3500"/>
+	  <GUIObject ObjectType="SpecialTopic" LeftX="2195" TopY="525"  Width="800" Height="900" Command="NextMap"/>	  
+	  <GUIObject ObjectType="SpecialTopic" LeftX="2195" TopY="1545" Width="800" Height="900" Command="ZoomIn"/>
+      <GUIObject ObjectType="SpecialTopic" LeftX="2195" TopY="2565" Width="800" Height="900" Command="ZoomOut"/> 
+    </ObjectGroup>
+	
+	<!-- Table Interface 2 HORIZONTAL -->
+    <ObjectGroup IsGlobal="true" FirstEventInitOnly="false">
+	  <AnotoPattern Id="62998" LeftX="4000" TopY="14215" Width="6100" Height="1800"/>	
+	  <GUIObject ObjectType="POISelect"    LeftX="4000" TopY="15135" Width="325" Height="380" Select="previous"/>
+	  <GUIObject ObjectType="POISelect"    LeftX="4605" TopY="15135" Width="325" Height="380" Select="next"/>
+      <GUIObject ObjectType="ExternalApp"  LeftX="5590" TopY="15135" Width="325" Height="380" AppId="0" ButtonId="0"/>  <!-- prev POI media -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="6195" TopY="15135" Width="325" Height="380" AppId="0" ButtonId="1"/>  <!-- next POI media -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="6185" TopY="14215" Width="900" Height="800" AppId="0" ButtonId="2"/>  <!-- show POI images -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="5165" TopY="14215" Width="900" Height="800" AppId="0" ButtonId="4"/>  <!-- show POI charts -->
+	  <GUIObject ObjectType="SpecialTopic" LeftX="7350" TopY="15180" Width="900" Height="800" Command="NextMap"/>	  
+	  <GUIObject ObjectType="SpecialTopic" LeftX="8370" TopY="15180" Width="900" Height="800" Command="ZoomIn"/>
+      <GUIObject ObjectType="SpecialTopic" LeftX="9390" TopY="15180" Width="900" Height="800" Command="ZoomOut"/> 
+    </ObjectGroup>
+	
+	<!-- Table Interface 3 HORIZONTAL -->
+	<ObjectGroup IsGlobal="true" FirstEventInitOnly="false">
+	  <AnotoPattern Id="62991" LeftX="5250" TopY="18810" Width="6300" Height="2500"/>	
+	  <GUIObject ObjectType="POISelect"    LeftX="7205"  TopY="19920" Width="325" Height="380" Select="previous"/>
+	  <GUIObject ObjectType="POISelect"    LeftX="7810"  TopY="19920" Width="325" Height="380" Select="next"/>  
+      <GUIObject ObjectType="ExternalApp"  LeftX="5615"  TopY="19920" Width="325" Height="380" AppId="0" ButtonId="0"/>  <!-- prev POI media -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="6220"  TopY="19920" Width="325" Height="380" AppId="0" ButtonId="1"/>  <!-- next POI media -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="5250"  TopY="20425" Width="900" Height="800" AppId="0" ButtonId="2"/>  <!-- show POI images -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="6270"  TopY="20425" Width="900" Height="800" AppId="0" ButtonId="4"/>  <!-- show POI charts -->
+	  <GUIObject ObjectType="SpecialTopic" LeftX="10810" TopY="18810" Width="900" Height="800" Command="NextMap"/>	  
+	  <GUIObject ObjectType="SpecialTopic" LeftX="9790"  TopY="18810" Width="900" Height="800" Command="ZoomIn"/>
+      <GUIObject ObjectType="SpecialTopic" LeftX="8770"  TopY="18810" Width="900" Height="800" Command="ZoomOut"/> 
+    </ObjectGroup>
+	
+	<!-- Table Interface 4 VERTICAL -->
+	<ObjectGroup IsGlobal="true" FirstEventInitOnly="false">
+	  <AnotoPattern Id="62984" LeftX="11850" TopY="22360" Width="1300" Height="2900"/>	
+	  <GUIObject ObjectType="POISelect"    LeftX="11850" TopY="22360" Width="380" Height="325" Select="previous"/>
+	  <GUIObject ObjectType="POISelect"    LeftX="11850" TopY="22965" Width="380" Height="325" Select="next"/>
+      <GUIObject ObjectType="ExternalApp"  LeftX="11850" TopY="23955" Width="380" Height="325" AppId="0" ButtonId="0"/>  <!-- prev POI media -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="11850" TopY="24560" Width="380" Height="325" AppId="0" ButtonId="1"/>  <!-- next POI media -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="12350" TopY="24555" Width="800" Height="900" AppId="0" ButtonId="2"/>  <!-- show POI images -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="12350" TopY="23535" Width="800" Height="900" AppId="0" ButtonId="4"/>  <!-- show POI charts -->
+	</ObjectGroup>
+	<ObjectGroup IsGlobal="true" FirstEventInitOnly="false">  
+	  <AnotoPattern Id="62984" LeftX="11010" TopY="30160" Width="800" Height="1600"/>
+	  <GUIObject ObjectType="SpecialTopic" LeftX="11010" TopY="30160" Width="800" Height="900" Command="NextMap"/>	  
+	  <GUIObject ObjectType="SpecialTopic" LeftX="11010" TopY="31180" Width="800" Height="900" Command="ZoomIn"/>
+    </ObjectGroup> 
+	<ObjectGroup IsGlobal="true" FirstEventInitOnly="false">
+	  <AnotoPattern Id="62991" LeftX="11010" TopY="720" Width="800" Height="900"/>  
+	  <GUIObject ObjectType="SpecialTopic" LeftX="11010" TopY="720"  Width="800" Height="900" Command="ZoomOut"/> 
+    </ObjectGroup>	
+	
+	<!-- Table Interface 5 HORIZONTAL -->
+	<ObjectGroup IsGlobal="true" FirstEventInitOnly="false">
+	  <AnotoPattern Id="62985" LeftX="14870" TopY="28360" Width="2900" Height="2800"/>	
+	  <GUIObject ObjectType="POISelect"    LeftX="17430" TopY="29810" Width="325" Height="380" Select="previous"/>
+	  <GUIObject ObjectType="POISelect"    LeftX="16835" TopY="29810" Width="325" Height="380" Select="next"/>
+      <GUIObject ObjectType="ExternalApp"  LeftX="15845" TopY="29810" Width="325" Height="380" AppId="0" ButtonId="0"/>  <!-- prev POI media -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="15240" TopY="29810" Width="325" Height="380" AppId="0" ButtonId="1"/>  <!-- next POI media -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="14870" TopY="30310" Width="900" Height="800" AppId="0" ButtonId="2"/>  <!-- show POI images -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="15890" TopY="30310" Width="900" Height="800" AppId="0" ButtonId="4"/>  <!-- show POI charts -->
+	  <GUIObject ObjectType="SpecialTopic" LeftX="16915" TopY="28360" Width="900" Height="800" Command="NextMap"/>	  
+	  <GUIObject ObjectType="SpecialTopic" LeftX="15895" TopY="28360" Width="900" Height="800" Command="ZoomIn"/>
+      <GUIObject ObjectType="SpecialTopic" LeftX="14875" TopY="28360" Width="900" Height="800" Command="ZoomOut"/> 
+    </ObjectGroup>	
+	
+	<!-- Table Interface 6 VERTICAL -->
+	<ObjectGroup IsGlobal="true" FirstEventInitOnly="false">
+	  <AnotoPattern Id="62986" LeftX="8865" TopY="6525" Width="1400" Height="6300"/>	
+	  <GUIObject ObjectType="POISelect"    LeftX="8865" TopY="6525"  Width="380" Height="325" Select="previous"/>
+	  <GUIObject ObjectType="POISelect"    LeftX="8865" TopY="7130"  Width="380" Height="325" Select="next"/>
+      <GUIObject ObjectType="ExternalApp"  LeftX="8865" TopY="8120"  Width="380" Height="325" AppId="0" ButtonId="0"/>  <!-- prev POI media -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="8865" TopY="8725"  Width="380" Height="325" AppId="0" ButtonId="1"/>  <!-- next POI media -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="9375" TopY="8720"  Width="800" Height="900" AppId="0" ButtonId="2"/>  <!-- show POI images -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="9375" TopY="7700"  Width="800" Height="900" AppId="0" ButtonId="4"/>  <!-- show POI charts -->
+	  <GUIObject ObjectType="SpecialTopic" LeftX="8865" TopY="10000" Width="800" Height="900" Command="NextMap"/>	  
+	  <GUIObject ObjectType="SpecialTopic" LeftX="8865" TopY="11020" Width="800" Height="900" Command="ZoomIn"/>
+      <GUIObject ObjectType="SpecialTopic" LeftX="8865" TopY="12040" Width="800" Height="900" Command="ZoomOut"/> 
+    </ObjectGroup>
+	
+	<!-- Table Interface 7 HORIZONTAL -->
+	<ObjectGroup IsGlobal="true" FirstEventInitOnly="false">
+	  <AnotoPattern Id="63000" LeftX="7150" TopY="22050" Width="5950" Height="1800"/>	
+	  <GUIObject ObjectType="POISelect"    LeftX="7150"  TopY="22970" Width="325" Height="380" Select="previous"/>
+	  <GUIObject ObjectType="POISelect"    LeftX="7755"  TopY="22970" Width="325" Height="380" Select="next"/>
+      <GUIObject ObjectType="ExternalApp"  LeftX="8750"  TopY="22970" Width="325" Height="380" AppId="0" ButtonId="0"/>  <!-- prev POI media -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="9375"  TopY="22970" Width="325" Height="380" AppId="0" ButtonId="1"/>  <!-- next POI media -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="9360"  TopY="22050" Width="900" Height="800" AppId="0" ButtonId="2"/>  <!-- show POI images -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="8340"  TopY="22050" Width="900" Height="800" AppId="0" ButtonId="4"/>  <!-- show POI charts --> 
+	  <GUIObject ObjectType="SpecialTopic" LeftX="10270" TopY="22960" Width="900" Height="800" Command="NextMap"/>	  
+	  <GUIObject ObjectType="SpecialTopic" LeftX="11290" TopY="22960" Width="900" Height="800" Command="ZoomIn"/>
+      <GUIObject ObjectType="SpecialTopic" LeftX="12310" TopY="22960" Width="900" Height="800" Command="ZoomOut"/> 
+    </ObjectGroup>
+	
+	<!-- Table Interface 8 VERTICAL -->
+	<ObjectGroup IsGlobal="true" FirstEventInitOnly="false">
+	  <AnotoPattern Id="63001" LeftX="7960" TopY="11260" Width="1800" Height="6100"/>	
+	  <GUIObject ObjectType="POISelect"    LeftX="8890" TopY="16920" Width="380" Height="325" Select="previous"/>
+	  <GUIObject ObjectType="POISelect"    LeftX="8890" TopY="16315" Width="380" Height="325" Select="next"/>
+      <GUIObject ObjectType="ExternalApp"  LeftX="8890" TopY="15340" Width="380" Height="325" AppId="0" ButtonId="0"/>  <!-- prev POI media -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="8890" TopY="14735" Width="380" Height="325" AppId="0" ButtonId="1"/>  <!-- next POI media -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="7960" TopY="14370" Width="800" Height="900" AppId="0" ButtonId="2"/>  <!-- show POI images -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="7960" TopY="15390" Width="800" Height="900" AppId="0" ButtonId="4"/>  <!-- show POI charts -->
+	  <GUIObject ObjectType="SpecialTopic" LeftX="8865" TopY="13300" Width="800" Height="900" Command="NextMap"/>	  
+	  <GUIObject ObjectType="SpecialTopic" LeftX="8865" TopY="12280" Width="800" Height="900" Command="ZoomIn"/>
+      <GUIObject ObjectType="SpecialTopic" LeftX="8865" TopY="11260" Width="800" Height="900" Command="ZoomOut"/> 
+    </ObjectGroup>
+	
+	<!-- Table Interface 9 VERTICAL -->
+	<ObjectGroup IsGlobal="true" FirstEventInitOnly="false">
+	  <AnotoPattern Id="62994" LeftX="13770" TopY="14120" Width="1800" Height="6400"/>	
+	  <GUIObject ObjectType="POISelect"    LeftX="14690" TopY="16695" Width="380" Height="325" Select="previous"/>
+	  <GUIObject ObjectType="POISelect"    LeftX="14690" TopY="16090" Width="380" Height="325" Select="next"/>
+      <GUIObject ObjectType="ExternalApp"  LeftX="14690" TopY="15110" Width="380" Height="325" AppId="0" ButtonId="0"/>  <!-- prev POI media -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="14690" TopY="14505" Width="380" Height="325" AppId="0" ButtonId="1"/>  <!-- next POI media -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="13770" TopY="15140" Width="800" Height="900" AppId="0" ButtonId="4"/>  <!-- show POI charts -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="13770" TopY="14120" Width="800" Height="900" AppId="0" ButtonId="2"/>  <!-- show POI images -->
+	  <GUIObject ObjectType="SpecialTopic" LeftX="14700" TopY="19740" Width="800" Height="900" Command="NextMap"/>	  
+	  <GUIObject ObjectType="SpecialTopic" LeftX="14700" TopY="18720" Width="800" Height="900" Command="ZoomIn"/>
+      <GUIObject ObjectType="SpecialTopic" LeftX="14700" TopY="17700" Width="800" Height="900" Command="ZoomOut"/> 
+    </ObjectGroup>
+
+	<!-- Table Interface 10 VERTICAL -->
+	<ObjectGroup IsGlobal="true" FirstEventInitOnly="false">
+	  <AnotoPattern Id="62980" LeftX="15270" TopY="5550" Width="ww" Height="hh"/>	
+	  <GUIObject ObjectType="POISelect"    LeftX="15330" TopY="8990"  Width="380" Height="325" Select="previous"/>
+	  <GUIObject ObjectType="POISelect"    LeftX="15330" TopY="9595"  Width="380" Height="325" Select="next"/>
+      <GUIObject ObjectType="ExternalApp"  LeftX="15330" TopY="10570" Width="380" Height="325" AppId="0" ButtonId="0"/>  <!-- prev POI media -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="15330" TopY="11175" Width="380" Height="325" AppId="0" ButtonId="1"/>  <!-- next POI media -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="15840" TopY="10170" Width="800" Height="900" AppId="0" ButtonId="4"/>  <!-- show POI charts -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="15840" TopY="11190" Width="800" Height="900" AppId="0" ButtonId="2"/>  <!-- show POI images -->
+	  <GUIObject ObjectType="SpecialTopic" LeftX="15270" TopY="5550"  Width="800" Height="900" Command="NextMap"/>	  
+	  <GUIObject ObjectType="SpecialTopic" LeftX="15270" TopY="6570"  Width="800" Height="900" Command="ZoomIn"/>
+      <GUIObject ObjectType="SpecialTopic" LeftX="15270" TopY="7590"  Width="800" Height="900" Command="ZoomOut"/> 
+    </ObjectGroup>
+	
+	<!-- Table Interface 11 VERTICAL -->
+	<ObjectGroup IsGlobal="true" FirstEventInitOnly="false">
+	  <AnotoPattern Id="62981" LeftX="18235" TopY="16955" Width="1800" Height="6600"/>	
+	  <GUIObject ObjectType="POISelect"    LeftX="19160" TopY="19510" Width="380" Height="325" Select="previous"/>
+	  <GUIObject ObjectType="POISelect"    LeftX="19160" TopY="18905" Width="380" Height="325" Select="next"/>
+      <GUIObject ObjectType="ExternalApp"  LeftX="19160" TopY="17935" Width="380" Height="325" AppId="0" ButtonId="0"/>  <!-- prev POI media -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="19160" TopY="17330" Width="380" Height="325" AppId="0" ButtonId="1"/>  <!-- next POI media -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="18235" TopY="17975" Width="800" Height="900" AppId="0" ButtonId="4"/>  <!-- show POI charts -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="18235" TopY="16955" Width="800" Height="900" AppId="0" ButtonId="2"/>  <!-- show POI îmages -->
+	  <GUIObject ObjectType="SpecialTopic" LeftX="19145" TopY="22700" Width="800" Height="900" Command="NextMap"/>	  
+	  <GUIObject ObjectType="SpecialTopic" LeftX="19145" TopY="21680" Width="800" Height="900" Command="ZoomIn"/>
+      <GUIObject ObjectType="SpecialTopic" LeftX="19145" TopY="20660" Width="800" Height="900" Command="ZoomOut"/> 
+    </ObjectGroup>	
+	
+	<!-- Table Interface 12 VERTICAL -->
+	<ObjectGroup IsGlobal="true" FirstEventInitOnly="false">
+	  <AnotoPattern Id="62989" LeftX="3125" TopY="24050" Width="1800" Height="6100"/>	
+	  <GUIObject ObjectType="POISelect"    LeftX="4060" TopY="29670" Width="380" Height="325" Select="previous"/>
+	  <GUIObject ObjectType="POISelect"    LeftX="4060" TopY="29065" Width="380" Height="325" Select="next"/>
+      <GUIObject ObjectType="ExternalApp"  LeftX="4060" TopY="28090" Width="380" Height="325" AppId="0" ButtonId="0"/>  <!-- prev POI media -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="4060" TopY="27485" Width="380" Height="325" AppId="0" ButtonId="1"/>  <!-- next POI media -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="3125" TopY="27120" Width="800" Height="900" AppId="0" ButtonId="2"/>  <!-- show POI images -->
+	  <GUIObject ObjectType="ExternalApp"  LeftX="3125" TopY="28140" Width="800" Height="900" AppId="0" ButtonId="4"/>  <!-- show POI charts -->
+	  <GUIObject ObjectType="SpecialTopic" LeftX="4050" TopY="26090" Width="800" Height="900" Command="NextMap"/>	  
+	  <GUIObject ObjectType="SpecialTopic" LeftX="4050" TopY="25070" Width="800" Height="900" Command="ZoomIn"/>
+      <GUIObject ObjectType="SpecialTopic" LeftX="4050" TopY="24050" Width="800" Height="900" Command="ZoomOut"/> 
+    </ObjectGroup>
+	
+	<!-- ========================================== BIG FRIBOURG TABLE ============================================== -->
+	
+	<ObjectGroup IsGlobal="true" FirstEventInitOnly="false">
+      <AnotoPattern Id="62976" OffsetX= "0"	   OffsetY="0"/>
+      <AnotoPattern Id="62977" OffsetX= "22500" OffsetY="0"/>
+      <AnotoPattern Id="62978" OffsetX= "45000" OffsetY="0"/>
+      <AnotoPattern Id="62979" OffsetX= "67500" OffsetY="0"/>
+      <AnotoPattern Id="62980" OffsetX= "90000" OffsetY="0"/>
+      <AnotoPattern Id="62981" OffsetX="112500" OffsetY="0"/>
+	  <AnotoPattern Id="62982" OffsetX="135000" OffsetY="0"/>
+	  
+	  <AnotoPattern Id="62983" OffsetX= "0"	    OffsetY="31750"/>
+      <AnotoPattern Id="62984" OffsetX= "22500" OffsetY="31750"/>
+      <AnotoPattern Id="62985" OffsetX= "45000" OffsetY="31750"/>
+      <AnotoPattern Id="62986" OffsetX= "67500" OffsetY="31750"/>
+      <AnotoPattern Id="62987" OffsetX= "90000" OffsetY="31750"/>
+      <AnotoPattern Id="62988" OffsetX="112500" OffsetY="31750"/>
+	  <AnotoPattern Id="62989" OffsetX="135000" OffsetY="31750"/>
+	  
+      <AnotoPattern Id="62990" OffsetX= "0"	    OffsetY="63500"/>
+      <AnotoPattern Id="62991" OffsetX= "22500" OffsetY="63500"/>
+      <AnotoPattern Id="62992" OffsetX= "45000" OffsetY="63500"/>
+      <AnotoPattern Id="62993" OffsetX= "67500" OffsetY="63500"/>
+      <AnotoPattern Id="62994" OffsetX= "90000" OffsetY="63500"/>
+      <AnotoPattern Id="62995" OffsetX="112500" OffsetY="63500"/>
+	  <AnotoPattern Id="62996" OffsetX="135000" OffsetY="63500"/>
+
+      <AnotoPattern Id="62997" OffsetX= "0"	    OffsetY="95250"/>
+      <AnotoPattern Id="62998" OffsetX= "22500" OffsetY="95250"/>
+      <AnotoPattern Id="62999" OffsetX= "45000" OffsetY="95250"/>
+      <AnotoPattern Id="63000" OffsetX= "67500" OffsetY="95250"/>
+      <AnotoPattern Id="63001" OffsetX= "90000" OffsetY="95250"/>
+      <AnotoPattern Id="63002" OffsetX="112500" OffsetY="95250"/>
+      <AnotoPattern Id="63003" OffsetX="135000" OffsetY="95250"/>	  
+
+      <GUIObject ObjectType="MoveAndZoomAbsolute"  LongitudeMapsToAnotoX="true" LeftX="2500" TopY="2690" Width="136360" Height="121215" CircleSelectionTime="2000" CircleSelectionOffset="30" PointRadius="250" LeftValue="7.0361776218" RightValue="7.2321651018" BottomValue="46.7626320342" TopValue="46.8832359146"/></ObjectGroup>
+
+	
+  </ObjectSet>
+  
+  
+  
+  
+  
+    <!-- ================================================================================================================================================== -->
+    <!-- ======================================================= SOCIAL LIFE ============================================================================== -->
+    <!-- ================================================================================================================================================== -->  
+
+  <ObjectSet Id="1">
+
+    <!-- Fronleichnamsfest -->
+	<ObjectGroup Topic="5001" FirstEventInitOnly="false" RelativeObjects="false"> 
+		<AnotoPattern Id="17936" LeftX="15790" TopY="15635" Width="2000" Height="2220"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="15790" TopY="15635" Width="2000" Height="2220" AppId="5001" ButtonId="201"/>
+	</ObjectGroup>
+    
+    <!-- Die Chilbi -->
+	<ObjectGroup Topic="5002" FirstEventInitOnly="false" RelativeObjects="false"> 
+		<AnotoPattern Id="17936" LeftX="18330" TopY="15635" Width="2000" Height="2220"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="18330" TopY="15635" Width="2000" Height="2220" AppId="5002" ButtonId="202"/>
+	</ObjectGroup>
+
+    
+    <!-- Nikolausfest -->
+	<ObjectGroup Topic="5007" FirstEventInitOnly="false" RelativeObjects="false"> 
+		<AnotoPattern Id="17936" LeftX="14515" TopY="17875" Width="2000" Height="2075"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="14515" TopY="17875" Width="2000" Height="2075" AppId="5007" ButtonId="207"/>
+	</ObjectGroup>    
+    
+    <!-- Internationales Folkloretreffen -->
+	<ObjectGroup Topic="5006" FirstEventInitOnly="false" RelativeObjects="false"> 
+		<AnotoPattern Id="17936" LeftX="17060" TopY="17875" Width="2000" Height="2075"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="17060" TopY="17875" Width="2000" Height="2075" AppId="5006" ButtonId="206"/>
+	</ObjectGroup>
+
+    
+    <!-- Alpabzug -->
+	<ObjectGroup Topic="5005" FirstEventInitOnly="false" RelativeObjects="false"> 
+		<AnotoPattern Id="17936" LeftX="15790" TopY="20000" Width="2000" Height="2075"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="15790" TopY="20000" Width="2000" Height="2075" AppId="5005" ButtonId="205"/>
+	</ObjectGroup>
+
+    <!-- Murtenlauf -->
+	<ObjectGroup Topic="5003" FirstEventInitOnly="false" RelativeObjects="false"> 
+		<AnotoPattern Id="17936" LeftX="18340" TopY="20000" Width="2000" Height="2075"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="18340" TopY="20000" Width="2000" Height="2075" AppId="5003" ButtonId="203"/>
+	</ObjectGroup>
+   
+
+    <!-- Märkte -->
+	<ObjectGroup Topic="5004" FirstEventInitOnly="false" RelativeObjects="false"> 
+		<AnotoPattern Id="17936" LeftX="14515" TopY="22120" Width="2000" Height="2220"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="14515" TopY="22120" Width="2000" Height="2220" AppId="5004" ButtonId="204"/>
+	</ObjectGroup>
+
+    <!-- Historische Berufe -->
+	<ObjectGroup Topic="5008" FirstEventInitOnly="false" RelativeObjects="false"> 
+		<AnotoPattern Id="17936" LeftX="17080" TopY="22120" Width="2000" Height="2220"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="17080" TopY="22120" Width="2000" Height="2220" AppId="5008" ButtonId="208"/>
+	</ObjectGroup>
+    
+    <!-- Content Control Up/Down -->
+	<ObjectGroup IsGlobal="true" FirstEventInitOnly="false" RelativeObjects="false">
+		<AnotoPattern Id="17936" LeftX="16530" TopY="24955" Width="2100" Height="850"/>
+		<GUIObject ObjectType="SpecialTopic" LeftX="16530" TopY="24955" Width="750" Height="850" Command="ContentControlDown"/>
+		<GUIObject ObjectType="SpecialTopic" LeftX="17820" TopY="24955" Width="750" Height="850" Command="ContentControlUp"/>
+	</ObjectGroup>
+   
+  </ObjectSet>
+
+  
+    <!-- ================================================================================================================================================== -->
+    <!-- ======================================================= ARCHIVE ================================================================================== -->
+    <!-- ================================================================================================================================================== -->  
+
+  <ObjectSet Id="2">
+
+    <!-- Poya Brücke -->
+	<ObjectGroup Topic="5101" FirstEventInitOnly="false" RelativeObjects="false"> 
+		<AnotoPattern Id="17936" LeftX="15500" TopY="6055" Width="750" Height="750"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="15500" TopY="6055" Width="750" Height="750" AppId="5101" ButtonId="209"/>
+	</ObjectGroup>
+    
+    <!-- Tramway -->
+	<ObjectGroup Topic="5102" FirstEventInitOnly="false" RelativeObjects="false"> 
+		<AnotoPattern Id="17936" LeftX="15470" TopY="4400" Width="750" Height="750"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="15470" TopY="4400" Width="750" Height="750" AppId="5102" ButtonId="210"/>
+	</ObjectGroup> 
+
+    <!-- Trolleybus - Cumulobus - TPF -->
+	<ObjectGroup Topic="5103" FirstEventInitOnly="false" RelativeObjects="false"> 
+		<AnotoPattern Id="17936" LeftX="14075" TopY="3560" Width="750" Height="750"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="14075" TopY="3560" Width="750" Height="750" AppId="5103" ButtonId="211"/>
+	</ObjectGroup> 
+
+    <!-- Neuer Bahnhof – Alter Bahnhof  -->
+	<ObjectGroup Topic="5104" FirstEventInitOnly="false" RelativeObjects="false"> 
+		<AnotoPattern Id="17936" LeftX="14070" TopY="5225" Width="750" Height="750"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="14070" TopY="5225" Width="750" Height="750" AppId="5104" ButtonId="212"/>
+	</ObjectGroup> 
+
+    <!-- Zersiedelung  -->
+	<ObjectGroup Topic="5105" FirstEventInitOnly="false" RelativeObjects="false"> 
+		<AnotoPattern Id="17936" LeftX="17610" TopY="2775" Width="750" Height="750"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="17610" TopY="2775" Width="750" Height="750" AppId="5105" ButtonId="213"/>
+	</ObjectGroup>
+
+    <!-- Demographie  -->
+	<ObjectGroup Topic="5106" FirstEventInitOnly="false" RelativeObjects="false"> 
+		<AnotoPattern Id="17936" LeftX="19050" TopY="3540" Width="750" Height="750"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="19050" TopY="3540" Width="750" Height="750" AppId="5106" ButtonId="214"/>
+	</ObjectGroup>
+
+    <!-- Raumplanung -->
+	<ObjectGroup Topic="5107" FirstEventInitOnly="false" RelativeObjects="false"> 
+		<AnotoPattern Id="17936" LeftX="17610" TopY="4410" Width="750" Height="750"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="17610" TopY="4410" Width="750" Height="750" AppId="5107" ButtonId="215"/>
+	</ObjectGroup>
+
+    <!-- Festungswerke  -->
+    <ObjectGroup Topic="5108" FirstEventInitOnly="false" RelativeObjects="false">
+        <AnotoPattern Id="17936" LeftX="19050" TopY="5150" Width="750" Height="750"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="19050" TopY="5150" Width="750" Height="750" AppId="5108" ButtonId="216"/>
+	</ObjectGroup>
+
+    <!-- Brunnen -->
+	<ObjectGroup Topic="5109" FirstEventInitOnly="false" RelativeObjects="false"> 
+		<AnotoPattern Id="17936" LeftX="17610" TopY="6025" Width="750" Height="750"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="17610" TopY="6025" Width="750" Height="750" AppId="5109" ButtonId="217"/>
+	</ObjectGroup>
+
+    <!-- Brücken -->
+	<ObjectGroup Topic="5110" FirstEventInitOnly="false" RelativeObjects="false"> 
+		<AnotoPattern Id="17936" LeftX="19050" TopY="6775" Width="750" Height="750"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="19050" TopY="6775" Width="750" Height="750" AppId="5110" ButtonId="218"/>
+	</ObjectGroup>
+
+    <!-- Drahtseilbahn -->
+	<ObjectGroup Topic="5111" FirstEventInitOnly="false" RelativeObjects="false"> 
+		<AnotoPattern Id="17936" LeftX="17610" TopY="7635" Width="750" Height="750"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="17610" TopY="7635" Width="750" Height="750" AppId="5111" ButtonId="219"/>
+	</ObjectGroup>
+    
+    <!-- Heizung Holz-, Kohle-, Elektrizität -->
+	<ObjectGroup Topic="5112" FirstEventInitOnly="false" RelativeObjects="false"> 
+		<AnotoPattern Id="17936" LeftX="14085" TopY="8500" Width="750" Height="750"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="14085" TopY="8500" Width="750" Height="750" AppId="5112" ButtonId="220"/>
+	</ObjectGroup>  
+  
+    <!-- Gas in Freiburg -->
+	<ObjectGroup Topic="5113" FirstEventInitOnly="false" RelativeObjects="false"> 
+		<AnotoPattern Id="17936" LeftX="15475" TopY="9295" Width="750" Height="750"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="15475" TopY="9295" Width="750" Height="750" AppId="5113" ButtonId="221"/>
+	</ObjectGroup>
+
+    <!-- Erste Benzintankstelle -->
+	<ObjectGroup Topic="5114" FirstEventInitOnly="false" RelativeObjects="false"> 
+		<AnotoPattern Id="17936" LeftX="14080" TopY="10125" Width="750" Height="750"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="14080" TopY="10125" Width="750" Height="750" AppId="5114" ButtonId="222"/>
+	</ObjectGroup>
+
+    <!-- Detailhandel -->
+	<ObjectGroup Topic="5115" FirstEventInitOnly="false" RelativeObjects="false"> 
+		<AnotoPattern Id="17936" LeftX="17610" TopY="9745" Width="750" Height="750"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="17610" TopY="9745" Width="750" Height="750" AppId="5115" ButtonId="223"/>
+	</ObjectGroup>
+    
+    <!-- Grosshandel -->
+	<ObjectGroup Topic="5116" FirstEventInitOnly="false" RelativeObjects="false"> 
+		<AnotoPattern Id="17936" LeftX="19045" TopY="10600" Width="750" Height="750"/>
+		<GUIObject ObjectType="ExternalApp" LeftX="19045" TopY="10600" Width="750" Height="750" AppId="5116" ButtonId="224"/>
+	</ObjectGroup>
+  
+  </ObjectSet> 
+  
+
+  
+</AnotoGUIDriver>
